@@ -1,0 +1,1068 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: 3Stripes Data API
+  description: 'TODO: Add Description'
+host: example.com
+basePath: /
+securityDefinitions:
+  auth:
+    type: oauth2
+    flow: implicit
+    authorizationUrl: http://example.com
+    scopes: {}
+    x-skip-client-authentication: false
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /auth/login:
+    post:
+      description: 'TODO: Add Description'
+      summary: Auth Login
+      tags:
+      - Authentication
+      operationId: AuthLoginPost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/AuthLoginrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /auth/login
+          headers:
+            Content-Type: application/json
+          body: >-
+            {
+            	"username":"mncedim",
+            	"password":"1234"
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Auth Login
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /v1/users:
+    get:
+      description: Get users
+      summary: List Users
+      tags:
+      - User
+      operationId: V1UsersGet
+      produces:
+      - application/json
+      parameters:
+      - name: token
+        in: query
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /v1/users?token=e56e811bd0a6f35cbbea2df962d964f389e23499fe245ed368dcd45fd9186bba100d058d68c3adbcc6cb9775314d73e72494c0dede4d943163b523f1eae6e373
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: List Users
+        x-testDescription: Get users
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+    post:
+      description: Create a user.
+      summary: Create User
+      tags:
+      - User
+      operationId: V1UsersPost
+      produces:
+      - application/json
+      parameters:
+      - name: token
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/CreateUserrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /v1/users?token=e56e811bd0a6f35cbbea2df962d964f389e23499fe245ed368dcd45fd9186bba100d058d68c3adbcc6cb9775314d73e72494c0dede4d943163b523f1eae6e373
+          headers:
+            Content-Type: application/json
+          body: >-
+            {
+            	"first_name":"Jane",
+            	"last_name":"Doe",
+            	"dob":"2000-01-01",
+            	"email":"jane.doe@example.com",
+            	"mobile":"27211234567",
+            	"platform":"ecomm"
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Create User
+        x-testDescription: Create a user.
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /v1/users/481562:
+    get:
+      description: Get user
+      summary: Get User by ID
+      tags:
+      - User
+      operationId: V1Users481562Get
+      produces:
+      - application/json
+      parameters:
+      - name: token
+        in: query
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /v1/users/481562?token=e56e811bd0a6f35cbbea2df962d964f389e23499fe245ed368dcd45fd9186bba100d058d68c3adbcc6cb9775314d73e72494c0dede4d943163b523f1eae6e373
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Get User by ID
+        x-testDescription: Get user
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /v1/transactions:
+    get:
+      description: 'TODO: Add Description'
+      summary: List Transactions
+      tags:
+      - Transactions
+      operationId: V1TransactionsGet
+      produces:
+      - application/json
+      parameters:
+      - name: token
+        in: query
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /v1/transactions?token=e56e811bd0a6f35cbbea2df962d964f389e23499fe245ed368dcd45fd9186bba100d058d68c3adbcc6cb9775314d73e72494c0dede4d943163b523f1eae6e373
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: List Transactions
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+    post:
+      description: Create ecomm transaction
+      summary: https://api.stage.adidas3stripes.co.za/v1/transactions1
+      tags:
+      - Misc
+      operationId: V1TransactionsPost2
+      produces:
+      - application/json
+      parameters:
+      - name: token
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/Https:~1~1api.stage.adidas3stripes.co.za~1v1~1transactionsrequest3'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /v1/transactions?token=e56e811bd0a6f35cbbea2df962d964f389e23499fe245ed368dcd45fd9186bba100d058d68c3adbcc6cb9775314d73e72494c0dede4d943163b523f1eae6e373
+          headers:
+            Content-Type: application/json
+          body: >-
+            {
+            	"transno":3030,
+            	"transdate":"2018-02-08",
+            	"trans_amount":758.34,
+            	"no_items":1,
+            	"userid":481562,
+            	"type":"ecomm",
+            	"storeno":"za123",
+            	"cardno":"6000555553447777",
+            	"id_customer":"999",
+            	"email":"example@example.com"
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: https://api.stage.adidas3stripes.co.za/v1/transactions1
+        x-testDescription: Create ecomm transaction
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /v1/transactions/1000/sale-entries:
+    get:
+      description: Get transaction items for a transaction
+      summary: https://api.stage.adidas3stripes.co.za/v1/transactions/1000/sale-entries
+      tags:
+      - Misc
+      operationId: V1Transactions1000SaleEntriesGet
+      produces:
+      - application/json
+      parameters:
+      - name: token
+        in: query
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /v1/transactions/1000/sale-entries?token=e56e811bd0a6f35cbbea2df962d964f389e23499fe245ed368dcd45fd9186bba100d058d68c3adbcc6cb9775314d73e72494c0dede4d943163b523f1eae6e373
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: https://api.stage.adidas3stripes.co.za/v1/transactions/1000/sale-entries
+        x-testDescription: Get transaction items for a transaction
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+    post:
+      description: Create transaction sale entry
+      summary: https://api.stage.adidas3stripes.co.za/v1/transactions/1000/sale-entries
+      tags:
+      - Misc
+      operationId: V1Transactions1000SaleEntriesPost
+      produces:
+      - application/json
+      parameters:
+      - name: token
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/Https:~1~1api.stage.adidas3stripes.co.za~1v1~1transactions~11000~1saleEntriesrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /v1/transactions/1000/sale-entries?token=e56e811bd0a6f35cbbea2df962d964f389e23499fe245ed368dcd45fd9186bba100d058d68c3adbcc6cb9775314d73e72494c0dede4d943163b523f1eae6e373
+          headers:
+            Content-Type: application/json
+          body: >-
+            {
+            	"itemno":1,
+            	"transdate":"2018-02-08",
+            	"item_amount":100.23,
+            	"quantity":2,
+            	"type":"FO"
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: https://api.stage.adidas3stripes.co.za/v1/transactions/1000/sale-entries1
+        x-testDescription: Create transaction sale entry
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /v1/transactions/1000/sale-entries/1:
+    put:
+      description: Update transaction sale entry
+      summary: https://api.stage.adidas3stripes.co.za/v1/transactions/1000/sale-entries/1
+      tags:
+      - Misc
+      operationId: V1Transactions1000SaleEntries1Put
+      produces:
+      - application/json
+      parameters:
+      - name: token
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/Https:~1~1api.stage.adidas3stripes.co.za~1v1~1transactions~11000~1saleEntries~11request'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: PUT
+          uri: /v1/transactions/1000/sale-entries/1?token=e56e811bd0a6f35cbbea2df962d964f389e23499fe245ed368dcd45fd9186bba100d058d68c3adbcc6cb9775314d73e72494c0dede4d943163b523f1eae6e373
+          headers:
+            Content-Type: application/json
+          body: >-
+            {
+            	"storeno":"za123",
+            	"identifier":"002",
+            	"colourway":"blue/red"
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: https://api.stage.adidas3stripes.co.za/v1/transactions/1000/sale-entries/1
+        x-testDescription: Update transaction sale entry
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /v1/members:
+    get:
+      description: Get trans members
+      summary: https://api.stage.adidas3stripes.co.za/v1/members
+      tags:
+      - Misc
+      operationId: V1MembersGet
+      produces:
+      - application/json
+      parameters:
+      - name: token
+        in: query
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /v1/members?token=e56e811bd0a6f35cbbea2df962d964f389e23499fe245ed368dcd45fd9186bba100d058d68c3adbcc6cb9775314d73e72494c0dede4d943163b523f1eae6e373
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: https://api.stage.adidas3stripes.co.za/v1/members
+        x-testDescription: Get trans members
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+    post:
+      description: Create trans member
+      summary: https://api.stage.adidas3stripes.co.za/v1/members
+      tags:
+      - Misc
+      operationId: V1MembersPost
+      produces:
+      - application/json
+      parameters:
+      - name: token
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/Https:~1~1api.stage.adidas3stripes.co.za~1v1~1membersrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /v1/members?token=e56e811bd0a6f35cbbea2df962d964f389e23499fe245ed368dcd45fd9186bba100d058d68c3adbcc6cb9775314d73e72494c0dede4d943163b523f1eae6e373
+          headers:
+            Content-Type: application/json
+          body: >-
+            {
+            	"rbo_memberno": "1111123334454555",
+                "ext_memberno": "8886667775556767"
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: https://api.stage.adidas3stripes.co.za/v1/members1
+        x-testDescription: Create trans member
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /v1/items:
+    get:
+      description: Get Items (trans_itemdesc)
+      summary: https://api.stage.adidas3stripes.co.za/v1/items
+      tags:
+      - Misc
+      operationId: V1ItemsGet
+      produces:
+      - application/json
+      parameters:
+      - name: token
+        in: query
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /v1/items?token=e56e811bd0a6f35cbbea2df962d964f389e23499fe245ed368dcd45fd9186bba100d058d68c3adbcc6cb9775314d73e72494c0dede4d943163b523f1eae6e373
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: https://api.stage.adidas3stripes.co.za/v1/items
+        x-testDescription: Get Items (trans_itemdesc)
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+    post:
+      description: Create trans item desc
+      summary: https://api.stage.adidas3stripes.co.za/v1/items
+      tags:
+      - Misc
+      operationId: V1ItemsPost
+      produces:
+      - application/json
+      parameters:
+      - name: token
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/Https:~1~1api.stage.adidas3stripes.co.za~1v1~1itemsrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /v1/items?token=e56e811bd0a6f35cbbea2df962d964f389e23499fe245ed368dcd45fd9186bba100d058d68c3adbcc6cb9775314d73e72494c0dede4d943163b523f1eae6e373
+          headers:
+            Content-Type: application/json
+          body: >-
+            {
+            	"article_nr":"010001",
+                    "description":"Supernova Light 6 W",
+                    "colourway":"RUNWHT/SIRRE",
+                    "division":"FOOTWEAR",
+                    "gender":"WOMENS",
+                    "sport_category":"RUNNING",
+                    "product_group":"SHOES",
+                    "product_type":"SHOES - LOW (NON FOOTBALL)",
+                    "first_season":"F07",
+                    "last_season":"F07",
+                    "season":"CURRENT-2+",
+                    "business_segment":"RUNNING FTW ADIDAS",
+                    "sales_line":"SUPERNOVA",
+                    "marketing_line":"LIGHT"
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: https://api.stage.adidas3stripes.co.za/v1/items1
+        x-testDescription: Create trans item desc
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+definitions:
+  AuthLoginrequest:
+    title: Auth LoginRequest
+    example:
+      username: mncedim
+      password: 1234
+    type: object
+    properties:
+      username:
+        description: ''
+        example: mncedim
+        type: string
+      password:
+        description: ''
+        example: 1234
+        type: string
+    required:
+    - username
+    - password
+  CreateUserrequest:
+    title: Create UserRequest
+    example:
+      first_name: Jane
+      last_name: Doe
+      dob: 2000-01-01
+      email: jane.doe@example.com
+      mobile: 27211234567
+      platform: ecomm
+    type: object
+    properties:
+      first_name:
+        description: ''
+        example: Jane
+        type: string
+      last_name:
+        description: ''
+        example: Doe
+        type: string
+      dob:
+        description: ''
+        example: 2000-01-01
+        type: string
+      email:
+        description: ''
+        example: jane.doe@example.com
+        type: string
+      mobile:
+        description: ''
+        example: 27211234567
+        type: string
+      platform:
+        description: ''
+        example: ecomm
+        type: string
+    required:
+    - first_name
+    - last_name
+    - dob
+    - email
+    - mobile
+    - platform
+  Https://api.stage.adidas3stripes.co.za/v1/transactionsrequest:
+    title: https://api.stage.adidas3stripes.co.za/v1/transactionsRequest
+    example:
+      transno: 1000
+      transdate: 2018-02-08
+      trans_amount: 589.23000000000002
+      no_items: 5
+      userid: 481562
+      type: FO
+      identifier: 002
+      rbo_memberno: 1111111111
+      ext_memberno: 222222222
+      storeno: za123
+      pos_termno: 555
+      cardno: 6000555553447777
+    type: object
+    properties:
+      transno:
+        description: ''
+        example: 1000
+        type: integer
+        format: int32
+      transdate:
+        description: ''
+        example: 2018-02-08
+        type: string
+      trans_amount:
+        description: ''
+        example: 589.23000000000002
+        type: number
+        format: double
+      no_items:
+        description: ''
+        example: 5
+        type: integer
+        format: int32
+      userid:
+        description: ''
+        example: 481562
+        type: integer
+        format: int32
+      type:
+        description: ''
+        example: FO
+        type: string
+      identifier:
+        description: ''
+        example: 002
+        type: string
+      rbo_memberno:
+        description: ''
+        example: 1111111111
+        type: string
+      ext_memberno:
+        description: ''
+        example: 222222222
+        type: string
+      storeno:
+        description: ''
+        example: za123
+        type: string
+      pos_termno:
+        description: ''
+        example: 555
+        type: string
+      cardno:
+        description: ''
+        example: 6000555553447777
+        type: string
+    required:
+    - transno
+    - transdate
+    - trans_amount
+    - no_items
+    - userid
+    - type
+    - identifier
+    - rbo_memberno
+    - ext_memberno
+    - storeno
+    - pos_termno
+    - cardno
+  Https://api.stage.adidas3stripes.co.za/v1/transactionsrequest3:
+    title: https://api.stage.adidas3stripes.co.za/v1/transactionsRequest3
+    example:
+      transno: 3030
+      transdate: 2018-02-08
+      trans_amount: 758.34000000000003
+      no_items: 1
+      userid: 481562
+      type: ecomm
+      storeno: za123
+      cardno: 6000555553447777
+      id_customer: 999
+      email: example@example.com
+    type: object
+    properties:
+      transno:
+        description: ''
+        example: 3030
+        type: integer
+        format: int32
+      transdate:
+        description: ''
+        example: 2018-02-08
+        type: string
+      trans_amount:
+        description: ''
+        example: 758.34000000000003
+        type: number
+        format: double
+      no_items:
+        description: ''
+        example: 1
+        type: integer
+        format: int32
+      userid:
+        description: ''
+        example: 481562
+        type: integer
+        format: int32
+      type:
+        description: ''
+        example: ecomm
+        type: string
+      storeno:
+        description: ''
+        example: za123
+        type: string
+      cardno:
+        description: ''
+        example: 6000555553447777
+        type: string
+      id_customer:
+        description: ''
+        example: 999
+        type: string
+      email:
+        description: ''
+        example: example@example.com
+        type: string
+    required:
+    - transno
+    - transdate
+    - trans_amount
+    - no_items
+    - userid
+    - type
+    - storeno
+    - cardno
+    - id_customer
+    - email
+  Https://api.stage.adidas3stripes.co.za/v1/transactions/1000/saleEntriesrequest:
+    title: https://api.stage.adidas3stripes.co.za/v1/transactions/1000/sale-entriesRequest
+    example:
+      itemno: 1
+      transdate: 2018-02-08
+      item_amount: 100.23
+      quantity: 2
+      type: FO
+    type: object
+    properties:
+      itemno:
+        description: ''
+        example: 1
+        type: integer
+        format: int32
+      transdate:
+        description: ''
+        example: 2018-02-08
+        type: string
+      item_amount:
+        description: ''
+        example: 100.23
+        type: number
+        format: double
+      quantity:
+        description: ''
+        example: 2
+        type: integer
+        format: int32
+      type:
+        description: ''
+        example: FO
+        type: string
+    required:
+    - itemno
+    - transdate
+    - item_amount
+    - quantity
+    - type
+  Https://api.stage.adidas3stripes.co.za/v1/transactions/1000/saleEntries/1request:
+    title: https://api.stage.adidas3stripes.co.za/v1/transactions/1000/sale-entries/1Request
+    example:
+      storeno: za123
+      identifier: 002
+      colourway: blue/red
+    type: object
+    properties:
+      storeno:
+        description: ''
+        example: za123
+        type: string
+      identifier:
+        description: ''
+        example: 002
+        type: string
+      colourway:
+        description: ''
+        example: blue/red
+        type: string
+    required:
+    - storeno
+    - identifier
+    - colourway
+  Https://api.stage.adidas3stripes.co.za/v1/membersrequest:
+    title: https://api.stage.adidas3stripes.co.za/v1/membersRequest
+    example:
+      rbo_memberno: 1111123334454555
+      ext_memberno: 8886667775556767
+    type: object
+    properties:
+      rbo_memberno:
+        description: ''
+        example: 1111123334454555
+        type: string
+      ext_memberno:
+        description: ''
+        example: 8886667775556767
+        type: string
+    required:
+    - rbo_memberno
+    - ext_memberno
+  Https://api.stage.adidas3stripes.co.za/v1/itemsrequest:
+    title: https://api.stage.adidas3stripes.co.za/v1/itemsRequest
+    example:
+      article_nr: 010001
+      description: Supernova Light 6 W
+      colourway: RUNWHT/SIRRE
+      division: FOOTWEAR
+      gender: WOMENS
+      sport_category: RUNNING
+      product_group: SHOES
+      product_type: SHOES - LOW (NON FOOTBALL)
+      first_season: F07
+      last_season: F07
+      season: CURRENT-2+
+      business_segment: RUNNING FTW ADIDAS
+      sales_line: SUPERNOVA
+      marketing_line: LIGHT
+    type: object
+    properties:
+      article_nr:
+        description: ''
+        example: 010001
+        type: string
+      description:
+        description: ''
+        example: Supernova Light 6 W
+        type: string
+      colourway:
+        description: ''
+        example: RUNWHT/SIRRE
+        type: string
+      division:
+        description: ''
+        example: FOOTWEAR
+        type: string
+      gender:
+        description: ''
+        example: WOMENS
+        type: string
+      sport_category:
+        description: ''
+        example: RUNNING
+        type: string
+      product_group:
+        description: ''
+        example: SHOES
+        type: string
+      product_type:
+        description: ''
+        example: SHOES - LOW (NON FOOTBALL)
+        type: string
+      first_season:
+        description: ''
+        example: F07
+        type: string
+      last_season:
+        description: ''
+        example: F07
+        type: string
+      season:
+        description: ''
+        example: CURRENT-2+
+        type: string
+      business_segment:
+        description: ''
+        example: RUNNING FTW ADIDAS
+        type: string
+      sales_line:
+        description: ''
+        example: SUPERNOVA
+        type: string
+      marketing_line:
+        description: ''
+        example: LIGHT
+        type: string
+    required:
+    - article_nr
+    - description
+    - colourway
+    - division
+    - gender
+    - sport_category
+    - product_group
+    - product_type
+    - first_season
+    - last_season
+    - season
+    - business_segment
+    - sales_line
+    - marketing_line
