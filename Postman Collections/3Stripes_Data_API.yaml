@@ -52,8 +52,8 @@ paths:
             Content-Type: application/json
           body: >-
             {
-            	"username":"mncedim",
-            	"password":"1234"
+              "username":"zando",
+              "password":"zand123@o"
             }
         expectedResponse:
           x-allowExtraHeaders: true
@@ -81,7 +81,7 @@ paths:
       produces:
       - application/json
       parameters:
-      - name: token
+      - name: email
         in: query
         required: true
         type: string
@@ -94,7 +94,7 @@ paths:
       x-unitTests:
       - request:
           method: GET
-          uri: /v1/users?token=e56e811bd0a6f35cbbea2df962d964f389e23499fe245ed368dcd45fd9186bba100d058d68c3adbcc6cb9775314d73e72494c0dede4d943163b523f1eae6e373
+          uri: /v1/users?email= jane.doe@example.com
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -120,11 +120,6 @@ paths:
       produces:
       - application/json
       parameters:
-      - name: token
-        in: query
-        required: true
-        type: string
-        description: ''
       - name: Body
         in: body
         required: true
@@ -144,7 +139,7 @@ paths:
       x-unitTests:
       - request:
           method: POST
-          uri: /v1/users?token=e56e811bd0a6f35cbbea2df962d964f389e23499fe245ed368dcd45fd9186bba100d058d68c3adbcc6cb9775314d73e72494c0dede4d943163b523f1eae6e373
+          uri: /v1/users
           headers:
             Content-Type: application/json
           body: >-
@@ -181,12 +176,7 @@ paths:
       operationId: V1Users481562Get
       produces:
       - application/json
-      parameters:
-      - name: token
-        in: query
-        required: true
-        type: string
-        description: ''
+      parameters: []
       responses:
         200:
           description: ''
@@ -195,7 +185,7 @@ paths:
       x-unitTests:
       - request:
           method: GET
-          uri: /v1/users/481562?token=e56e811bd0a6f35cbbea2df962d964f389e23499fe245ed368dcd45fd9186bba100d058d68c3adbcc6cb9775314d73e72494c0dede4d943163b523f1eae6e373
+          uri: /v1/users/481562
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -221,12 +211,7 @@ paths:
       operationId: V1TransactionsGet
       produces:
       - application/json
-      parameters:
-      - name: token
-        in: query
-        required: true
-        type: string
-        description: ''
+      parameters: []
       responses:
         200:
           description: ''
@@ -235,7 +220,7 @@ paths:
       x-unitTests:
       - request:
           method: GET
-          uri: /v1/transactions?token=e56e811bd0a6f35cbbea2df962d964f389e23499fe245ed368dcd45fd9186bba100d058d68c3adbcc6cb9775314d73e72494c0dede4d943163b523f1eae6e373
+          uri: /v1/transactions
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -254,24 +239,19 @@ paths:
         IsMultiContentStreaming: false
     post:
       description: Create ecomm transaction
-      summary: https://api.stage.adidas3stripes.co.za/v1/transactions1
+      summary: Create global transaction
       tags:
-      - Misc
+      - Transactions
       operationId: V1TransactionsPost2
       produces:
       - application/json
       parameters:
-      - name: token
-        in: query
-        required: true
-        type: string
-        description: ''
       - name: Body
         in: body
         required: true
         description: ''
         schema:
-          $ref: '#/definitions/Https:~1~1api.stage.adidas3stripes.co.za~1v1~1transactionsrequest3'
+          $ref: '#/definitions/CreateGlobalTransactionrequest'
       - name: Content-Type
         in: header
         required: true
@@ -285,7 +265,7 @@ paths:
       x-unitTests:
       - request:
           method: POST
-          uri: /v1/transactions?token=e56e811bd0a6f35cbbea2df962d964f389e23499fe245ed368dcd45fd9186bba100d058d68c3adbcc6cb9775314d73e72494c0dede4d943163b523f1eae6e373
+          uri: /v1/transactions
           headers:
             Content-Type: application/json
           body: >-
@@ -310,7 +290,7 @@ paths:
           headers: {}
         x-testShouldPass: true
         x-testEnabled: true
-        x-testName: https://api.stage.adidas3stripes.co.za/v1/transactions1
+        x-testName: Create global transaction
         x-testDescription: Create ecomm transaction
       x-operation-settings:
         CollectParameters: false
@@ -320,18 +300,13 @@ paths:
   /v1/transactions/1000/sale-entries:
     get:
       description: Get transaction items for a transaction
-      summary: https://api.stage.adidas3stripes.co.za/v1/transactions/1000/sale-entries
+      summary: List sales entries for transaction
       tags:
-      - Misc
+      - Transactions
       operationId: V1Transactions1000SaleEntriesGet
       produces:
       - application/json
-      parameters:
-      - name: token
-        in: query
-        required: true
-        type: string
-        description: ''
+      parameters: []
       responses:
         200:
           description: ''
@@ -340,7 +315,7 @@ paths:
       x-unitTests:
       - request:
           method: GET
-          uri: /v1/transactions/1000/sale-entries?token=e56e811bd0a6f35cbbea2df962d964f389e23499fe245ed368dcd45fd9186bba100d058d68c3adbcc6cb9775314d73e72494c0dede4d943163b523f1eae6e373
+          uri: /v1/transactions/1000/sale-entries
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -350,7 +325,7 @@ paths:
           headers: {}
         x-testShouldPass: true
         x-testEnabled: true
-        x-testName: https://api.stage.adidas3stripes.co.za/v1/transactions/1000/sale-entries
+        x-testName: List sales entries for transaction
         x-testDescription: Get transaction items for a transaction
       x-operation-settings:
         CollectParameters: false
@@ -359,24 +334,19 @@ paths:
         IsMultiContentStreaming: false
     post:
       description: Create transaction sale entry
-      summary: https://api.stage.adidas3stripes.co.za/v1/transactions/1000/sale-entries
+      summary: Create sales entry for transaction
       tags:
-      - Misc
+      - Transactions
       operationId: V1Transactions1000SaleEntriesPost
       produces:
       - application/json
       parameters:
-      - name: token
-        in: query
-        required: true
-        type: string
-        description: ''
       - name: Body
         in: body
         required: true
         description: ''
         schema:
-          $ref: '#/definitions/Https:~1~1api.stage.adidas3stripes.co.za~1v1~1transactions~11000~1saleEntriesrequest'
+          $ref: '#/definitions/CreateSalesEntryForTransactionrequest'
       - name: Content-Type
         in: header
         required: true
@@ -390,7 +360,7 @@ paths:
       x-unitTests:
       - request:
           method: POST
-          uri: /v1/transactions/1000/sale-entries?token=e56e811bd0a6f35cbbea2df962d964f389e23499fe245ed368dcd45fd9186bba100d058d68c3adbcc6cb9775314d73e72494c0dede4d943163b523f1eae6e373
+          uri: /v1/transactions/1000/sale-entries
           headers:
             Content-Type: application/json
           body: >-
@@ -410,7 +380,7 @@ paths:
           headers: {}
         x-testShouldPass: true
         x-testEnabled: true
-        x-testName: https://api.stage.adidas3stripes.co.za/v1/transactions/1000/sale-entries1
+        x-testName: Create sales entry for transaction
         x-testDescription: Create transaction sale entry
       x-operation-settings:
         CollectParameters: false
@@ -420,24 +390,19 @@ paths:
   /v1/transactions/1000/sale-entries/1:
     put:
       description: Update transaction sale entry
-      summary: https://api.stage.adidas3stripes.co.za/v1/transactions/1000/sale-entries/1
+      summary: Update sales entry
       tags:
-      - Misc
+      - Transactions
       operationId: V1Transactions1000SaleEntries1Put
       produces:
       - application/json
       parameters:
-      - name: token
-        in: query
-        required: true
-        type: string
-        description: ''
       - name: Body
         in: body
         required: true
         description: ''
         schema:
-          $ref: '#/definitions/Https:~1~1api.stage.adidas3stripes.co.za~1v1~1transactions~11000~1saleEntries~11request'
+          $ref: '#/definitions/UpdateSalesEntryrequest'
       - name: Content-Type
         in: header
         required: true
@@ -451,7 +416,7 @@ paths:
       x-unitTests:
       - request:
           method: PUT
-          uri: /v1/transactions/1000/sale-entries/1?token=e56e811bd0a6f35cbbea2df962d964f389e23499fe245ed368dcd45fd9186bba100d058d68c3adbcc6cb9775314d73e72494c0dede4d943163b523f1eae6e373
+          uri: /v1/transactions/1000/sale-entries/1
           headers:
             Content-Type: application/json
           body: >-
@@ -469,7 +434,7 @@ paths:
           headers: {}
         x-testShouldPass: true
         x-testEnabled: true
-        x-testName: https://api.stage.adidas3stripes.co.za/v1/transactions/1000/sale-entries/1
+        x-testName: Update sales entry
         x-testDescription: Update transaction sale entry
       x-operation-settings:
         CollectParameters: false
@@ -479,18 +444,13 @@ paths:
   /v1/members:
     get:
       description: Get trans members
-      summary: https://api.stage.adidas3stripes.co.za/v1/members
+      summary: List global members
       tags:
-      - Misc
+      - Member
       operationId: V1MembersGet
       produces:
       - application/json
-      parameters:
-      - name: token
-        in: query
-        required: true
-        type: string
-        description: ''
+      parameters: []
       responses:
         200:
           description: ''
@@ -499,7 +459,7 @@ paths:
       x-unitTests:
       - request:
           method: GET
-          uri: /v1/members?token=e56e811bd0a6f35cbbea2df962d964f389e23499fe245ed368dcd45fd9186bba100d058d68c3adbcc6cb9775314d73e72494c0dede4d943163b523f1eae6e373
+          uri: /v1/members
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -509,7 +469,7 @@ paths:
           headers: {}
         x-testShouldPass: true
         x-testEnabled: true
-        x-testName: https://api.stage.adidas3stripes.co.za/v1/members
+        x-testName: List global members
         x-testDescription: Get trans members
       x-operation-settings:
         CollectParameters: false
@@ -518,24 +478,19 @@ paths:
         IsMultiContentStreaming: false
     post:
       description: Create trans member
-      summary: https://api.stage.adidas3stripes.co.za/v1/members
+      summary: Create member
       tags:
-      - Misc
+      - Member
       operationId: V1MembersPost
       produces:
       - application/json
       parameters:
-      - name: token
-        in: query
-        required: true
-        type: string
-        description: ''
       - name: Body
         in: body
         required: true
         description: ''
         schema:
-          $ref: '#/definitions/Https:~1~1api.stage.adidas3stripes.co.za~1v1~1membersrequest'
+          $ref: '#/definitions/CreateMemberrequest'
       - name: Content-Type
         in: header
         required: true
@@ -549,7 +504,7 @@ paths:
       x-unitTests:
       - request:
           method: POST
-          uri: /v1/members?token=e56e811bd0a6f35cbbea2df962d964f389e23499fe245ed368dcd45fd9186bba100d058d68c3adbcc6cb9775314d73e72494c0dede4d943163b523f1eae6e373
+          uri: /v1/members
           headers:
             Content-Type: application/json
           body: >-
@@ -566,7 +521,7 @@ paths:
           headers: {}
         x-testShouldPass: true
         x-testEnabled: true
-        x-testName: https://api.stage.adidas3stripes.co.za/v1/members1
+        x-testName: Create member
         x-testDescription: Create trans member
       x-operation-settings:
         CollectParameters: false
@@ -576,18 +531,13 @@ paths:
   /v1/items:
     get:
       description: Get Items (trans_itemdesc)
-      summary: https://api.stage.adidas3stripes.co.za/v1/items
+      summary: List items
       tags:
-      - Misc
+      - Item
       operationId: V1ItemsGet
       produces:
       - application/json
-      parameters:
-      - name: token
-        in: query
-        required: true
-        type: string
-        description: ''
+      parameters: []
       responses:
         200:
           description: ''
@@ -596,7 +546,7 @@ paths:
       x-unitTests:
       - request:
           method: GET
-          uri: /v1/items?token=e56e811bd0a6f35cbbea2df962d964f389e23499fe245ed368dcd45fd9186bba100d058d68c3adbcc6cb9775314d73e72494c0dede4d943163b523f1eae6e373
+          uri: /v1/items
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -606,7 +556,7 @@ paths:
           headers: {}
         x-testShouldPass: true
         x-testEnabled: true
-        x-testName: https://api.stage.adidas3stripes.co.za/v1/items
+        x-testName: List items
         x-testDescription: Get Items (trans_itemdesc)
       x-operation-settings:
         CollectParameters: false
@@ -615,24 +565,19 @@ paths:
         IsMultiContentStreaming: false
     post:
       description: Create trans item desc
-      summary: https://api.stage.adidas3stripes.co.za/v1/items
+      summary: Create items
       tags:
-      - Misc
+      - Item
       operationId: V1ItemsPost
       produces:
       - application/json
       parameters:
-      - name: token
-        in: query
-        required: true
-        type: string
-        description: ''
       - name: Body
         in: body
         required: true
         description: ''
         schema:
-          $ref: '#/definitions/Https:~1~1api.stage.adidas3stripes.co.za~1v1~1itemsrequest'
+          $ref: '#/definitions/CreateItemsrequest'
       - name: Content-Type
         in: header
         required: true
@@ -646,7 +591,7 @@ paths:
       x-unitTests:
       - request:
           method: POST
-          uri: /v1/items?token=e56e811bd0a6f35cbbea2df962d964f389e23499fe245ed368dcd45fd9186bba100d058d68c3adbcc6cb9775314d73e72494c0dede4d943163b523f1eae6e373
+          uri: /v1/items
           headers:
             Content-Type: application/json
           body: >-
@@ -675,7 +620,7 @@ paths:
           headers: {}
         x-testShouldPass: true
         x-testEnabled: true
-        x-testName: https://api.stage.adidas3stripes.co.za/v1/items1
+        x-testName: Create items
         x-testDescription: Create trans item desc
       x-operation-settings:
         CollectParameters: false
@@ -686,17 +631,17 @@ definitions:
   AuthLoginrequest:
     title: Auth LoginRequest
     example:
-      username: mncedim
-      password: 1234
+      username: zando
+      password: zand123@o
     type: object
     properties:
       username:
         description: ''
-        example: mncedim
+        example: zando
         type: string
       password:
         description: ''
-        example: 1234
+        example: zand123@o
         type: string
     required:
     - username
@@ -743,10 +688,10 @@ definitions:
     - email
     - mobile
     - platform
-  Https://api.stage.adidas3stripes.co.za/v1/transactionsrequest:
-    title: https://api.stage.adidas3stripes.co.za/v1/transactionsRequest
+  CreateEcomTransactionrequest:
+    title: Create ecom TransactionRequest
     example:
-      transno: 1000
+      transno: 1003
       transdate: 2018-02-08
       trans_amount: 589.23000000000002
       no_items: 5
@@ -756,13 +701,14 @@ definitions:
       rbo_memberno: 1111111111
       ext_memberno: 222222222
       storeno: za123
+      delivery_address: 12 Seuss way
       pos_termno: 555
       cardno: 6000555553447777
     type: object
     properties:
       transno:
         description: ''
-        example: 1000
+        example: 1003
         type: integer
         format: int32
       transdate:
@@ -804,6 +750,10 @@ definitions:
         description: ''
         example: za123
         type: string
+      delivery_address:
+        description: ''
+        example: 12 Seuss way
+        type: string
       pos_termno:
         description: ''
         example: 555
@@ -823,10 +773,11 @@ definitions:
     - rbo_memberno
     - ext_memberno
     - storeno
+    - delivery_address
     - pos_termno
     - cardno
-  Https://api.stage.adidas3stripes.co.za/v1/transactionsrequest3:
-    title: https://api.stage.adidas3stripes.co.za/v1/transactionsRequest3
+  CreateGlobalTransactionrequest:
+    title: Create global transactionRequest
     example:
       transno: 3030
       transdate: 2018-02-08
@@ -895,8 +846,8 @@ definitions:
     - cardno
     - id_customer
     - email
-  Https://api.stage.adidas3stripes.co.za/v1/transactions/1000/saleEntriesrequest:
-    title: https://api.stage.adidas3stripes.co.za/v1/transactions/1000/sale-entriesRequest
+  CreateSalesEntryForTransactionrequest:
+    title: Create sales entry for transactionRequest
     example:
       itemno: 1
       transdate: 2018-02-08
@@ -934,8 +885,8 @@ definitions:
     - item_amount
     - quantity
     - type
-  Https://api.stage.adidas3stripes.co.za/v1/transactions/1000/saleEntries/1request:
-    title: https://api.stage.adidas3stripes.co.za/v1/transactions/1000/sale-entries/1Request
+  UpdateSalesEntryrequest:
+    title: Update sales entryRequest
     example:
       storeno: za123
       identifier: 002
@@ -958,8 +909,8 @@ definitions:
     - storeno
     - identifier
     - colourway
-  Https://api.stage.adidas3stripes.co.za/v1/membersrequest:
-    title: https://api.stage.adidas3stripes.co.za/v1/membersRequest
+  CreateMemberrequest:
+    title: Create memberRequest
     example:
       rbo_memberno: 1111123334454555
       ext_memberno: 8886667775556767
@@ -976,8 +927,8 @@ definitions:
     required:
     - rbo_memberno
     - ext_memberno
-  Https://api.stage.adidas3stripes.co.za/v1/itemsrequest:
-    title: https://api.stage.adidas3stripes.co.za/v1/itemsRequest
+  CreateItemsrequest:
+    title: Create itemsRequest
     example:
       article_nr: 010001
       description: Supernova Light 6 W
