@@ -50,11 +50,7 @@ paths:
           uri: /auth/login
           headers:
             Content-Type: application/json
-          body: >-
-            {
-              "username":"zando",
-              "password":"zand123@o"
-            }
+          body: '{"username":"zando","password":"zand123@o"}'
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -142,15 +138,7 @@ paths:
           uri: /v1/users
           headers:
             Content-Type: application/json
-          body: >-
-            {
-            	"first_name":"Jane",
-            	"last_name":"Doe",
-            	"dob":"2000-01-01",
-            	"email":"jane.doe@example.com",
-            	"mobile":"27211234567",
-            	"platform":"ecomm"
-            }
+          body: '{"first_name":"Jane","last_name":"Doe","dob":"2000-01-01","email":"jane.doe@example.com","mobile":"27211234567","platform":"ecomm"}'
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -268,19 +256,7 @@ paths:
           uri: /v1/transactions
           headers:
             Content-Type: application/json
-          body: >-
-            {
-            	"transno":3030,
-            	"transdate":"2018-02-08",
-            	"trans_amount":758.34,
-            	"no_items":1,
-            	"userid":481562,
-            	"type":"ecomm",
-            	"storeno":"za123",
-            	"cardno":"6000555553447777",
-            	"id_customer":"999",
-            	"email":"example@example.com"
-            }
+          body: '{"transno":3030,"transdate":"2018-02-08","trans_amount":758.34,"no_items":1,"userid":481562,"type":"ecomm","storeno":"za123","cardno":"6000555553447777","id_customer":"999","email":"example@example.com"}'
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -363,14 +339,7 @@ paths:
           uri: /v1/transactions/1000/sale-entries
           headers:
             Content-Type: application/json
-          body: >-
-            {
-            	"itemno":1,
-            	"transdate":"2018-02-08",
-            	"item_amount":100.23,
-            	"quantity":2,
-            	"type":"FO"
-            }
+          body: '{"itemno":1,"transdate":"2018-02-08","item_amount":100.23,"quantity":2,"type":"FO"}'
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -419,12 +388,7 @@ paths:
           uri: /v1/transactions/1000/sale-entries/1
           headers:
             Content-Type: application/json
-          body: >-
-            {
-            	"storeno":"za123",
-            	"identifier":"002",
-            	"colourway":"blue/red"
-            }
+          body: '{"storeno":"za123","identifier":"002","colourway":"blue/red"}'
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -507,11 +471,7 @@ paths:
           uri: /v1/members
           headers:
             Content-Type: application/json
-          body: >-
-            {
-            	"rbo_memberno": "1111123334454555",
-                "ext_memberno": "8886667775556767"
-            }
+          body: '{"rbo_memberno":"1111123334454555","ext_memberno":"8886667775556767"}'
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -594,23 +554,7 @@ paths:
           uri: /v1/items
           headers:
             Content-Type: application/json
-          body: >-
-            {
-            	"article_nr":"010001",
-                    "description":"Supernova Light 6 W",
-                    "colourway":"RUNWHT/SIRRE",
-                    "division":"FOOTWEAR",
-                    "gender":"WOMENS",
-                    "sport_category":"RUNNING",
-                    "product_group":"SHOES",
-                    "product_type":"SHOES - LOW (NON FOOTBALL)",
-                    "first_season":"F07",
-                    "last_season":"F07",
-                    "season":"CURRENT-2+",
-                    "business_segment":"RUNNING FTW ADIDAS",
-                    "sales_line":"SUPERNOVA",
-                    "marketing_line":"LIGHT"
-            }
+          body: '{"article_nr":"010001","description":"Supernova Light 6 W","colourway":"RUNWHT/SIRRE","division":"FOOTWEAR","gender":"WOMENS","sport_category":"RUNNING","product_group":"SHOES","product_type":"SHOES - LOW (NON FOOTBALL)","first_season":"F07","last_season":"F07","season":"CURRENT-2+","business_segment":"RUNNING FTW ADIDAS","sales_line":"SUPERNOVA","marketing_line":"LIGHT"}'
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
