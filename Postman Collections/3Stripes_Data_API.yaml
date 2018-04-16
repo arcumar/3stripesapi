@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
   version: '1.0'
-  title: 3Stripes Data API
+  title: adidas 3S API
   description: 'TODO: Add Description'
 host: example.com
 basePath: /
@@ -85,6 +85,66 @@ paths:
       responses:
         200:
           description: ''
+          schema:
+            $ref: '#/definitions/FindUserByEmail'
+          examples:
+            application/json:
+              status: 200
+              data:
+              - id: 1
+                first_name: 3rd floor\
+                last_name: Unit 2C
+                dob: 0000-00-00
+                email: rushni.nordien@adidas.com
+                mobile: 0724440004
+                region: Western Cape
+                created_at: ''
+                updated_at: ''
+              - id: 668
+                first_name: Tash
+                last_name: Kiloh
+                dob: 1982-12-05
+                email: tash@sorbet.co.za
+                mobile: 0745892761
+                region: Gauteng
+                created_at: ''
+                updated_at: ''
+              - id: 3
+                first_name: Bafo
+                last_name: ''
+                dob: 0000-00-00
+                email: bafo@test.com
+                mobile: 0784066539
+                region: Eastern Cape
+                created_at: ''
+                updated_at: ''
+              - id: 4
+                first_name: 3rd floor\
+                last_name: Unit 2C
+                dob: 0000-00-00
+                email: lindsay.cragg@adidas.com
+                mobile: 0605799070
+                region: ''
+                created_at: ''
+                updated_at: ''
+              - id: 5
+                first_name: ''
+                last_name: ''
+                dob: ''
+                email: bradley.stern@adidas.com
+                mobile: null
+                region: ''
+                created_at: ''
+                updated_at: ''
+              meta:
+                pagination:
+                  total: 17169
+                  count: 5
+                  per_page: 5
+                  current_page: 1
+                  total_pages: 3434
+                  links:
+                    next: https://api.stage.reebokdelta.co.za/v1/users?page=2
       security:
       - auth: []
       x-unitTests:
@@ -93,11 +153,26 @@ paths:
           uri: /v1/users?email= jane.doe@example.com
         expectedResponse:
           x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
+          x-bodyMatchMode: RAW
           x-arrayOrderedMatching: false
           x-arrayCheckCount: false
           x-matchResponseSchema: true
-          headers: {}
+          headers:
+            Access-Control-Allow-Credentials: true
+            Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With
+            Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE
+            Access-Control-Allow-Origin: '*'
+            Access-Control-Max-Age: 86400
+            Cache-Control: no-cache, private
+            Connection: Keep-Alive
+            Content-Type: application/json
+            Date: Mon, 16 Apr 2018 11:56:09 GMT
+            Keep-Alive: timeout=5, max=100
+            Server: Apache
+            Transfer-Encoding: chunked
+            Vary: Authorization
+            X-Powered-By: PHP/7.0.29-1~dotdeb+8.1
+          body: '{"status":200,"data":[{"id":1,"first_name":"3rd floor\\","last_name":"Unit 2C","dob":"0000-00-00","email":"rushni.nordien@adidas.com","mobile":"0724440004","region":"Western Cape","created_at":"","updated_at":""},{"id":668,"first_name":"Tash","last_name":"Kiloh","dob":"1982-12-05","email":"tash@sorbet.co.za","mobile":"0745892761","region":"Gauteng","created_at":"","updated_at":""},{"id":3,"first_name":"Bafo","last_name":"","dob":"0000-00-00","email":"bafo@test.com","mobile":"0784066539","region":"Eastern Cape","created_at":"","updated_at":""},{"id":4,"first_name":"3rd floor\\","last_name":"Unit 2C","dob":"0000-00-00","email":"lindsay.cragg@adidas.com","mobile":"0605799070","region":"","created_at":"","updated_at":""},{"id":5,"first_name":"","last_name":"","dob":"","email":"bradley.stern@adidas.com","mobile":"null","region":"","created_at":"","updated_at":""}],"meta":{"pagination":{"total":17169,"count":5,"per_page":5,"current_page":1,"total_pages":3434,"links":{"next":"https://api.stage.reebokdelta.co.za/v1/users?page=2"}}}}'
         x-testShouldPass: true
         x-testEnabled: true
         x-testName: List Users
@@ -571,6 +646,41 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
+  /v1/interests:
+    get:
+      description: List interests
+      summary: List interests
+      tags:
+      - Interests
+      operationId: V1InterestsGet
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: ''
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /v1/interests
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: List interests
+        x-testDescription: List interests
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
 definitions:
   AuthLoginrequest:
     title: Auth LoginRequest
@@ -590,6 +700,263 @@ definitions:
     required:
     - username
     - password
+  FindUserByEmail:
+    title: Find user by email
+    example:
+      status: 200
+      data:
+      - id: 1
+        first_name: 3rd floor\
+        last_name: Unit 2C
+        dob: 0000-00-00
+        email: rushni.nordien@adidas.com
+        mobile: 0724440004
+        region: Western Cape
+        created_at: ''
+        updated_at: ''
+      - id: 668
+        first_name: Tash
+        last_name: Kiloh
+        dob: 1982-12-05
+        email: tash@sorbet.co.za
+        mobile: 0745892761
+        region: Gauteng
+        created_at: ''
+        updated_at: ''
+      - id: 3
+        first_name: Bafo
+        last_name: ''
+        dob: 0000-00-00
+        email: bafo@test.com
+        mobile: 0784066539
+        region: Eastern Cape
+        created_at: ''
+        updated_at: ''
+      - id: 4
+        first_name: 3rd floor\
+        last_name: Unit 2C
+        dob: 0000-00-00
+        email: lindsay.cragg@adidas.com
+        mobile: 0605799070
+        region: ''
+        created_at: ''
+        updated_at: ''
+      - id: 5
+        first_name: ''
+        last_name: ''
+        dob: ''
+        email: bradley.stern@adidas.com
+        mobile: null
+        region: ''
+        created_at: ''
+        updated_at: ''
+      meta:
+        pagination:
+          total: 17169
+          count: 5
+          per_page: 5
+          current_page: 1
+          total_pages: 3434
+          links:
+            next: https://api.stage.reebokdelta.co.za/v1/users?page=2
+    type: object
+    properties:
+      status:
+        description: ''
+        example: 200
+        type: integer
+        format: int32
+      data:
+        description: ''
+        example:
+        - id: 1
+          first_name: 3rd floor\
+          last_name: Unit 2C
+          dob: 0000-00-00
+          email: rushni.nordien@adidas.com
+          mobile: 0724440004
+          region: Western Cape
+          created_at: ''
+          updated_at: ''
+        - id: 668
+          first_name: Tash
+          last_name: Kiloh
+          dob: 1982-12-05
+          email: tash@sorbet.co.za
+          mobile: 0745892761
+          region: Gauteng
+          created_at: ''
+          updated_at: ''
+        - id: 3
+          first_name: Bafo
+          last_name: ''
+          dob: 0000-00-00
+          email: bafo@test.com
+          mobile: 0784066539
+          region: Eastern Cape
+          created_at: ''
+          updated_at: ''
+        - id: 4
+          first_name: 3rd floor\
+          last_name: Unit 2C
+          dob: 0000-00-00
+          email: lindsay.cragg@adidas.com
+          mobile: 0605799070
+          region: ''
+          created_at: ''
+          updated_at: ''
+        - id: 5
+          first_name: ''
+          last_name: ''
+          dob: ''
+          email: bradley.stern@adidas.com
+          mobile: null
+          region: ''
+          created_at: ''
+          updated_at: ''
+        type: array
+        items:
+          $ref: '#/definitions/Datum'
+      meta:
+        $ref: '#/definitions/Meta'
+    required:
+    - status
+    - data
+    - meta
+  Datum:
+    title: Datum
+    example:
+      id: 1
+      first_name: 3rd floor\
+      last_name: Unit 2C
+      dob: 0000-00-00
+      email: rushni.nordien@adidas.com
+      mobile: 0724440004
+      region: Western Cape
+      created_at: ''
+      updated_at: ''
+    type: object
+    properties:
+      id:
+        description: ''
+        example: 1
+        type: integer
+        format: int32
+      first_name:
+        description: ''
+        example: 3rd floor\
+        type: string
+      last_name:
+        description: ''
+        example: Unit 2C
+        type: string
+      dob:
+        description: ''
+        example: 0000-00-00
+        type: string
+      email:
+        description: ''
+        example: rushni.nordien@adidas.com
+        type: string
+      mobile:
+        description: ''
+        example: 0724440004
+        type: string
+      region:
+        description: ''
+        example: Western Cape
+        type: string
+      created_at:
+        description: ''
+        type: string
+      updated_at:
+        description: ''
+        type: string
+    required:
+    - id
+    - first_name
+    - last_name
+    - dob
+    - email
+    - mobile
+    - region
+    - created_at
+    - updated_at
+  Meta:
+    title: Meta
+    example:
+      pagination:
+        total: 17169
+        count: 5
+        per_page: 5
+        current_page: 1
+        total_pages: 3434
+        links:
+          next: https://api.stage.reebokdelta.co.za/v1/users?page=2
+    type: object
+    properties:
+      pagination:
+        $ref: '#/definitions/Pagination'
+    required:
+    - pagination
+  Pagination:
+    title: Pagination
+    example:
+      total: 17169
+      count: 5
+      per_page: 5
+      current_page: 1
+      total_pages: 3434
+      links:
+        next: https://api.stage.reebokdelta.co.za/v1/users?page=2
+    type: object
+    properties:
+      total:
+        description: ''
+        example: 17169
+        type: integer
+        format: int32
+      count:
+        description: ''
+        example: 5
+        type: integer
+        format: int32
+      per_page:
+        description: ''
+        example: 5
+        type: integer
+        format: int32
+      current_page:
+        description: ''
+        example: 1
+        type: integer
+        format: int32
+      total_pages:
+        description: ''
+        example: 3434
+        type: integer
+        format: int32
+      links:
+        $ref: '#/definitions/Links'
+    required:
+    - total
+    - count
+    - per_page
+    - current_page
+    - total_pages
+    - links
+  Links:
+    title: Links
+    example:
+      next: https://api.stage.reebokdelta.co.za/v1/users?page=2
+    type: object
+    properties:
+      next:
+        description: ''
+        example: https://api.stage.reebokdelta.co.za/v1/users?page=2
+        type: string
+    required:
+    - next
   CreateUserrequest:
     title: Create UserRequest
     example:
