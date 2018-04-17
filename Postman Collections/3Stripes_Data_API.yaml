@@ -69,114 +69,40 @@ paths:
         IsMultiContentStreaming: false
   /v1/users:
     get:
-      description: Get users
-      summary: List Users
+      description: List Users updated after date
+      summary: List Users updated after date
       tags:
       - User
-      operationId: V1UsersGet
+      operationId: V1UsersGet2
       produces:
       - application/json
       parameters:
-      - name: email
+      - name: filters[last_updated_at]
         in: query
         required: true
         type: string
+        format: date-time
         description: ''
       responses:
         200:
           description: ''
-          schema:
-            $ref: '#/definitions/FindUserByEmail'
-          examples:
-            application/json:
-              status: 200
-              data:
-              - id: 1
-                first_name: 3rd floor\
-                last_name: Unit 2C
-                dob: 0000-00-00
-                email: rushni.nordien@adidas.com
-                mobile: 0724440004
-                region: Western Cape
-                created_at: ''
-                updated_at: ''
-              - id: 668
-                first_name: Tash
-                last_name: Kiloh
-                dob: 1982-12-05
-                email: tash@sorbet.co.za
-                mobile: 0745892761
-                region: Gauteng
-                created_at: ''
-                updated_at: ''
-              - id: 3
-                first_name: Bafo
-                last_name: ''
-                dob: 0000-00-00
-                email: bafo@test.com
-                mobile: 0784066539
-                region: Eastern Cape
-                created_at: ''
-                updated_at: ''
-              - id: 4
-                first_name: 3rd floor\
-                last_name: Unit 2C
-                dob: 0000-00-00
-                email: lindsay.cragg@adidas.com
-                mobile: 0605799070
-                region: ''
-                created_at: ''
-                updated_at: ''
-              - id: 5
-                first_name: ''
-                last_name: ''
-                dob: ''
-                email: bradley.stern@adidas.com
-                mobile: null
-                region: ''
-                created_at: ''
-                updated_at: ''
-              meta:
-                pagination:
-                  total: 17169
-                  count: 5
-                  per_page: 5
-                  current_page: 1
-                  total_pages: 3434
-                  links:
-                    next: https://api.stage.reebokdelta.co.za/v1/users?page=2
       security:
       - auth: []
       x-unitTests:
       - request:
           method: GET
-          uri: /v1/users?email= jane.doe@example.com
+          uri: /v1/users?filters[last_updated_at]=2018-04-09
         expectedResponse:
           x-allowExtraHeaders: true
-          x-bodyMatchMode: RAW
+          x-bodyMatchMode: NONE
           x-arrayOrderedMatching: false
           x-arrayCheckCount: false
           x-matchResponseSchema: true
-          headers:
-            Access-Control-Allow-Credentials: true
-            Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With
-            Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE
-            Access-Control-Allow-Origin: '*'
-            Access-Control-Max-Age: 86400
-            Cache-Control: no-cache, private
-            Connection: Keep-Alive
-            Content-Type: application/json
-            Date: Mon, 16 Apr 2018 11:56:09 GMT
-            Keep-Alive: timeout=5, max=100
-            Server: Apache
-            Transfer-Encoding: chunked
-            Vary: Authorization
-            X-Powered-By: PHP/7.0.29-1~dotdeb+8.1
-          body: '{"status":200,"data":[{"id":1,"first_name":"3rd floor\\","last_name":"Unit 2C","dob":"0000-00-00","email":"rushni.nordien@adidas.com","mobile":"0724440004","region":"Western Cape","created_at":"","updated_at":""},{"id":668,"first_name":"Tash","last_name":"Kiloh","dob":"1982-12-05","email":"tash@sorbet.co.za","mobile":"0745892761","region":"Gauteng","created_at":"","updated_at":""},{"id":3,"first_name":"Bafo","last_name":"","dob":"0000-00-00","email":"bafo@test.com","mobile":"0784066539","region":"Eastern Cape","created_at":"","updated_at":""},{"id":4,"first_name":"3rd floor\\","last_name":"Unit 2C","dob":"0000-00-00","email":"lindsay.cragg@adidas.com","mobile":"0605799070","region":"","created_at":"","updated_at":""},{"id":5,"first_name":"","last_name":"","dob":"","email":"bradley.stern@adidas.com","mobile":"null","region":"","created_at":"","updated_at":""}],"meta":{"pagination":{"total":17169,"count":5,"per_page":5,"current_page":1,"total_pages":3434,"links":{"next":"https://api.stage.reebokdelta.co.za/v1/users?page=2"}}}}'
+          headers: {}
         x-testShouldPass: true
         x-testEnabled: true
-        x-testName: List Users
-        x-testDescription: Get users
+        x-testName: List Users updated after date
+        x-testDescription: List Users updated after date
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -213,7 +139,7 @@ paths:
           uri: /v1/users
           headers:
             Content-Type: application/json
-          body: '{"first_name":"Jane","last_name":"Doe","dob":"2000-01-01","email":"jane.doe@example.com","mobile":"27211234567","platform":"ecomm"}'
+          body: '{"first_name":"Jane","last_name":"Doe","dob":"2000-01-01","email":"jane.doe@example.com","mobile":"27211234567","platform":"ecomm","interests":["1","3"]}'
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -966,6 +892,9 @@ definitions:
       email: jane.doe@example.com
       mobile: 27211234567
       platform: ecomm
+      interests:
+      - 1
+      - 3
     type: object
     properties:
       first_name:
@@ -992,6 +921,14 @@ definitions:
         description: ''
         example: ecomm
         type: string
+      interests:
+        description: ''
+        example:
+        - 1
+        - 3
+        type: array
+        items:
+          type: string
     required:
     - first_name
     - last_name
@@ -999,6 +936,7 @@ definitions:
     - email
     - mobile
     - platform
+    - interests
   CreateEcomTransactionrequest:
     title: Create ecom TransactionRequest
     example:
