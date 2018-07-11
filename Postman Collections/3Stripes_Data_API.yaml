@@ -29,17 +29,17 @@ paths:
       produces:
       - application/json
       parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
       - name: Body
         in: body
         required: true
         description: ''
         schema:
           $ref: '#/definitions/AuthLoginrequest'
-      - name: Content-Type
-        in: header
-        required: true
-        type: string
-        description: ''
       responses:
         200:
           description: ''
@@ -117,17 +117,17 @@ paths:
       produces:
       - application/json
       parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
       - name: Body
         in: body
         required: true
         description: ''
         schema:
           $ref: '#/definitions/CreateUserrequest'
-      - name: Content-Type
-        in: header
-        required: true
-        type: string
-        description: ''
       responses:
         200:
           description: ''
@@ -235,17 +235,17 @@ paths:
       produces:
       - application/json
       parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
       - name: Body
         in: body
         required: true
         description: ''
         schema:
           $ref: '#/definitions/CreateGlobalTransactionrequest'
-      - name: Content-Type
-        in: header
-        required: true
-        type: string
-        description: ''
       responses:
         200:
           description: ''
@@ -318,17 +318,17 @@ paths:
       produces:
       - application/json
       parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
       - name: Body
         in: body
         required: true
         description: ''
         schema:
           $ref: '#/definitions/CreateSalesEntryForTransactionrequest'
-      - name: Content-Type
-        in: header
-        required: true
-        type: string
-        description: ''
       responses:
         200:
           description: ''
@@ -367,17 +367,17 @@ paths:
       produces:
       - application/json
       parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
       - name: Body
         in: body
         required: true
         description: ''
         schema:
           $ref: '#/definitions/UpdateSalesEntryrequest'
-      - name: Content-Type
-        in: header
-        required: true
-        type: string
-        description: ''
       responses:
         200:
           description: ''
@@ -450,17 +450,17 @@ paths:
       produces:
       - application/json
       parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
       - name: Body
         in: body
         required: true
         description: ''
         schema:
           $ref: '#/definitions/CreateMemberrequest'
-      - name: Content-Type
-        in: header
-        required: true
-        type: string
-        description: ''
       responses:
         200:
           description: ''
@@ -533,17 +533,17 @@ paths:
       produces:
       - application/json
       parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
       - name: Body
         in: body
         required: true
         description: ''
         schema:
           $ref: '#/definitions/CreateItemsrequest'
-      - name: Content-Type
-        in: header
-        required: true
-        type: string
-        description: ''
       responses:
         200:
           description: ''
