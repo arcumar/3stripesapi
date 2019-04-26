@@ -6,13 +6,11 @@
   },
   "item": [
     {
-      "_postman_id": "218351-cb9b7910-1283-1ebe-6fdd-1d59f0bc331e",
       "name": "Authentication",
-      "description": "",
       "item": [
         {
-          "_postman_id": "218351-0c318898-1763-8f35-f8cc-f068ff381b7e",
           "name": "Auth Login",
+          "_postman_id": "218351-0c318898-1763-8f35-f8cc-f068ff381b7e",
           "request": {
             "method": "POST",
             "header": [
@@ -29,16 +27,15 @@
           },
           "response": []
         }
-      ]
+      ],
+      "_postman_id": "218351-cb9b7910-1283-1ebe-6fdd-1d59f0bc331e"
     },
     {
-      "_postman_id": "218351-4d17691d-55a2-0c6d-b456-2db45fc3a5b5",
       "name": "User",
-      "description": "",
       "item": [
         {
-          "_postman_id": "218351-d6c18e88-ef1f-700d-3bfc-e046d4a1c633",
           "name": "List Users",
+          "_postman_id": "218351-d6c18e88-ef1f-700d-3bfc-e046d4a1c633",
           "request": {
             "auth": {
               "type": "bearer",
@@ -48,10 +45,6 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{base_url}}/v1/users?filters[email]=jane.doe@example.com&include=transactions,interests",
               "host": [
@@ -64,18 +57,15 @@
               "query": [
                 {
                   "key": "filters[email]",
-                  "value": "jane.doe@example.com",
-                  "equals": true
+                  "value": "jane.doe@example.com"
                 },
                 {
                   "key": "include",
-                  "value": "transactions,interests",
-                  "equals": true
+                  "value": "transactions,interests"
                 },
                 {
                   "key": "test",
                   "value": "haha",
-                  "equals": true,
                   "disabled": true
                 }
               ]
@@ -89,10 +79,6 @@
               "originalRequest": {
                 "method": "GET",
                 "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": ""
-                },
                 "url": {
                   "raw": "{{base_url}}/v1/users?email=jane.doe@example.com",
                   "host": [
@@ -105,8 +91,7 @@
                   "query": [
                     {
                       "key": "email",
-                      "value": "jane.doe@example.com",
-                      "equals": true
+                      "value": "jane.doe@example.com"
                     }
                   ]
                 }
@@ -210,10 +195,6 @@
               "originalRequest": {
                 "method": "GET",
                 "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": ""
-                },
                 "url": {
                   "raw": "{{base_url}}/v1/users?include=transactions,interests",
                   "host": [
@@ -226,8 +207,7 @@
                   "query": [
                     {
                       "key": "include",
-                      "value": "transactions,interests",
-                      "equals": true
+                      "value": "transactions,interests"
                     }
                   ]
                 }
@@ -328,8 +308,8 @@
           ]
         },
         {
-          "_postman_id": "218351-7b0ea361-91d7-7f0a-9e26-3902320f712e",
           "name": "List Users updated after date",
+          "_postman_id": "218351-7b0ea361-91d7-7f0a-9e26-3902320f712e",
           "request": {
             "auth": {
               "type": "bearer",
@@ -339,10 +319,6 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{base_url}}/v1/users?filters[last_updated_at]=2018-04-09",
               "host": [
@@ -355,13 +331,11 @@
               "query": [
                 {
                   "key": "filters[last_updated_at]",
-                  "value": "2018-04-09",
-                  "equals": true
+                  "value": "2018-04-09"
                 },
                 {
                   "key": "test",
                   "value": "haha",
-                  "equals": true,
                   "disabled": true
                 }
               ]
@@ -371,8 +345,8 @@
           "response": []
         },
         {
-          "_postman_id": "218351-a52f2095-729d-0710-0e61-68626ffbd375",
           "name": "Create User",
+          "_postman_id": "218351-a52f2095-729d-0710-0e61-68626ffbd375",
           "request": {
             "auth": {
               "type": "bearer",
@@ -397,8 +371,8 @@
           "response": []
         },
         {
-          "_postman_id": "218351-a7848397-62ce-7b9f-3310-9ae4239495e1",
           "name": "Get User by ID",
+          "_postman_id": "218351-a7848397-62ce-7b9f-3310-9ae4239495e1",
           "request": {
             "auth": {
               "type": "bearer",
@@ -408,25 +382,20 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{base_url}}/v1/users/481562",
             "description": "Get user"
           },
           "response": []
         }
-      ]
+      ],
+      "_postman_id": "218351-4d17691d-55a2-0c6d-b456-2db45fc3a5b5"
     },
     {
-      "_postman_id": "218351-a08dfdde-ff4c-6eb0-0db2-ee45742a8314",
       "name": "Transactions",
-      "description": "",
       "item": [
         {
-          "_postman_id": "218351-d32bfd5c-1039-6a04-2fbf-09d35b3efc23",
           "name": "List Transactions",
+          "_postman_id": "218351-d32bfd5c-1039-6a04-2fbf-09d35b3efc23",
           "request": {
             "auth": {
               "type": "bearer",
@@ -436,17 +405,13 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{base_url}}/v1/transactions"
           },
           "response": []
         },
         {
-          "_postman_id": "218351-7d37aef4-13cc-b059-11b9-46d1f0eafde1",
           "name": "Create ecom Transaction",
+          "_postman_id": "218351-7d37aef4-13cc-b059-11b9-46d1f0eafde1",
           "request": {
             "auth": {
               "type": "bearer",
@@ -471,8 +436,8 @@
           "response": []
         },
         {
-          "_postman_id": "218351-0ef755e6-0d34-b253-b74a-a43b37d63b8a",
           "name": "Create global transaction",
+          "_postman_id": "218351-0ef755e6-0d34-b253-b74a-a43b37d63b8a",
           "request": {
             "auth": {
               "type": "bearer",
@@ -497,8 +462,8 @@
           "response": []
         },
         {
-          "_postman_id": "218351-355152ef-120b-4d72-3928-bca3e1d2509b",
           "name": "List sales entries for transaction",
+          "_postman_id": "218351-355152ef-120b-4d72-3928-bca3e1d2509b",
           "request": {
             "auth": {
               "type": "bearer",
@@ -508,18 +473,14 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{base_url}}/v1/transactions/1000/sale-entries",
             "description": "Get transaction items for a transaction"
           },
           "response": []
         },
         {
-          "_postman_id": "218351-f3ea1964-efc9-ea81-6b11-43cb479b4680",
           "name": "Create sales entry for transaction",
+          "_postman_id": "218351-f3ea1964-efc9-ea81-6b11-43cb479b4680",
           "request": {
             "auth": {
               "type": "bearer",
@@ -544,8 +505,8 @@
           "response": []
         },
         {
-          "_postman_id": "218351-4574d24b-3772-9321-11b4-914a3feed1e8",
           "name": "Update sales entry",
+          "_postman_id": "218351-4574d24b-3772-9321-11b4-914a3feed1e8",
           "request": {
             "auth": {
               "type": "bearer",
@@ -569,16 +530,15 @@
           },
           "response": []
         }
-      ]
+      ],
+      "_postman_id": "218351-a08dfdde-ff4c-6eb0-0db2-ee45742a8314"
     },
     {
-      "_postman_id": "218351-0b675419-fd83-6ac2-ce19-0f062fad5ff3",
       "name": "Member",
-      "description": "",
       "item": [
         {
-          "_postman_id": "218351-362b0b2d-eecd-414c-a620-22e694ff34bd",
           "name": "Create member",
+          "_postman_id": "218351-362b0b2d-eecd-414c-a620-22e694ff34bd",
           "request": {
             "auth": {
               "type": "bearer",
@@ -603,8 +563,8 @@
           "response": []
         },
         {
-          "_postman_id": "218351-e36632cd-70d7-aaa9-d927-1b3dfa33e637",
           "name": "List global members",
+          "_postman_id": "218351-e36632cd-70d7-aaa9-d927-1b3dfa33e637",
           "request": {
             "auth": {
               "type": "bearer",
@@ -614,25 +574,20 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{base_url}}/v1/members",
             "description": "Get trans members"
           },
           "response": []
         }
-      ]
+      ],
+      "_postman_id": "218351-0b675419-fd83-6ac2-ce19-0f062fad5ff3"
     },
     {
-      "_postman_id": "218351-f38d38af-4118-9a23-14f3-9e7dcc9639cc",
       "name": "Item",
-      "description": "",
       "item": [
         {
-          "_postman_id": "218351-ee519c92-89e1-14cc-df82-fad8e6b756cc",
           "name": "List items",
+          "_postman_id": "218351-ee519c92-89e1-14cc-df82-fad8e6b756cc",
           "request": {
             "auth": {
               "type": "bearer",
@@ -642,18 +597,14 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{base_url}}/v1/items",
             "description": "Get Items (trans_itemdesc)"
           },
           "response": []
         },
         {
-          "_postman_id": "218351-31aba36a-6af9-462c-1eb2-78c727207201",
           "name": "Create items",
+          "_postman_id": "218351-31aba36a-6af9-462c-1eb2-78c727207201",
           "request": {
             "auth": {
               "type": "bearer",
@@ -677,16 +628,15 @@
           },
           "response": []
         }
-      ]
+      ],
+      "_postman_id": "218351-f38d38af-4118-9a23-14f3-9e7dcc9639cc"
     },
     {
-      "_postman_id": "218351-18c78817-8887-e352-f3d4-3af66e09c621",
       "name": "Interests",
-      "description": "",
       "item": [
         {
-          "_postman_id": "218351-d4725512-e372-acf2-4423-bc2f1419d2f1",
           "name": "List interests",
+          "_postman_id": "218351-d4725512-e372-acf2-4423-bc2f1419d2f1",
           "request": {
             "auth": {
               "type": "bearer",
@@ -696,16 +646,13 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{base_url}}/v1/interests",
             "description": "List interests"
           },
           "response": []
         }
-      ]
+      ],
+      "_postman_id": "218351-18c78817-8887-e352-f3d4-3af66e09c621"
     }
   ]
 }
