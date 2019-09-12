@@ -1,137 +1,952 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>APIMATIC - Login</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    
-    
-
-    
-
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.css" rel="stylesheet" />
-<link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/jquery.scrollbar/0.2.11/jquery.scrollbar.min.css"
-          integrity="sha256-nVXk5aDYc/D4r9OoqxZ5H6vpIAqAG5BhVuIdOihDN1c="
-          crossorigin="anonymous" />
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
-
-<link href="/bundles/front-css?v=11O7jOwdtFxvmVBTuhI4jW7gL4oZccYpht3O4dmVJC41" rel="stylesheet"/>
-
-    <link href="/bundles/onboarding-css?v=m1CDG8GUR5u_P3QvyzJOWHlZKrHcnVPf442vvOhB4h41" rel="stylesheet"/>
-
-
-    
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-
-    <!-- FAVICON START -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <!-- FAVICON END -->
-
-</head>
-<body>
-    <div class="container onboarding-container">
-            <div class="onboarding-container-centered ">
-                
-
-
-
-<header class="flex flex-col align-center">
-    <div class="icon">
-        <a href="/">
-            <img class="mx-auto d-block" alt="APIMATIC logo" title="Welcome to APIMATIC" src="/imgs/apimatic-logo.svg" />
-        </a>
-    </div>
-    <div class="content">
-        <p>Login to your account</p>
-    </div>
-
-</header>
-<section class="form-wrapper flex flex-col">
-
-<form action="/account/login?ReturnUrl=%2Fapi%2Ftransform%3Fformat%3Dswaggeryaml%26apikey%3DmONZg6E9hVHp7-WXsHucCGl-lXLvzN0t9GGEQ_s1xgrILHdXq_d50wEd8ptizzQN" id="loginForm" method="post" novalidate="True" role="form"><input name="__RequestVerificationToken" type="hidden" value="OFqGA5EXNV50GXrUCqsPUoLLmtNm9SU0HEsm6As74NEGkQQxNxWMXxr-m6-kKEppx5lTS5xLHjft_d0Shm6mfRUry1qx4YL2A5v7nBDZZqI1" /><div class="validation-summary-valid" data-valmsg-summary="true"><ul><li style="display:none"></li>
-</ul></div>        <div class="form-group">
-            <label class="mb-1" for="signInInputEmail1">
-                Email
-            </label>
-            <input class="form-control form-control-sm" data-Validation="email" data-val="true" data-val-email="The Email Address field is not a valid e-mail address." data-val-required="Email is required" id="Email" name="Email" placeholder="Enter email here" required="required" tabindex="2" type="email" value="" />
-
-        </div>
-        <div class="form-group mb-0">
-            <label class="mb-1" for="signInInputPassword">
-                Password
-            </label>
-            <a class="forgot-password" href="/account/forgotpassword?Length=7">Forgot password?</a>
-            <input class="form-control extra-padding-right" data-title="Caps lock is on" data-toggle="tooltip" data-trigger="manual" data-val="true" data-val-required="Password is required" id="js-onboarding-password-field" name="Password" placeholder="Password" required="true" type="password" />
-            <i class="fa fa-eye onboarding-show-password-icon" id="js-onboarding-show-password-icon"></i>
-        </div>
-        <div class="checkbox">
-            <label>
-                <input class="custom-control-input" data-val="true" data-val-required="The Remember me? field is required." id="customControlInline" name="RememberMe" tabindex="4" type="checkbox" value="true" /><input name="RememberMe" type="hidden" value="false" />
-                Remember me
-            </label>
-        </div>
-        <button type="submit" class="btn btn-primary btn-sm btn-block" tabindex="5">
-            Login
-        </button>
-        <a href="/account/register" class="btn btn-white btn-sm btn-block" tabindex="6">
-            Sign Up
-        </a>
-</form></section>
-
-            </div>
-    </div>
-</body>
-</html>
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.js"></script>
-
-<script src="https://cdn.rawgit.com/zenorocha/clipboard.js/master/dist/clipboard.min.js"></script>
-
-<script src="/bundles/front-js?v="></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
-<script>
-    $.validate({
-        modules: 'date, security'
-    });
-</script>
-<script src="/bundles/onboarding-js?v=2h6We__p_84-tByynY6kDWiE-iuM8Pigjw1rycnNaQY1"></script>
-
-
-
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: adidas 3S API
+  description: 'TODO: Add Description'
+  contact: {}
+host: example.com
+basePath: /
+securityDefinitions: {}
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /auth/login:
+    post:
+      description: 'TODO: Add Description'
+      summary: Auth Login
+      tags:
+      - Authentication
+      operationId: AuthLoginPost
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/AuthLoginRequest'
+      responses:
+        200:
+          description: ''
+          headers: {}
+  /v1/users:
+    get:
+      description: Get users
+      summary: List Users
+      tags:
+      - User
+      operationId: V1UsersGet
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: filters[email]
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: include
+        in: query
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+          schema:
+            $ref: '#/definitions/Finduserbyemail'
+          examples:
+            application/json:
+              status: 200
+              data:
+              - id: 1
+                first_name: 3rd floor\
+                last_name: Unit 2C
+                dob: 0000-00-00
+                email: rushni.nordien@adidas.com
+                mobile: 0724440004
+                region: Western Cape
+                created_at: ''
+                updated_at: ''
+              - id: 668
+                first_name: Tash
+                last_name: Kiloh
+                dob: 1982-12-05
+                email: tash@sorbet.co.za
+                mobile: 0745892761
+                region: Gauteng
+                created_at: ''
+                updated_at: ''
+              - id: 3
+                first_name: Bafo
+                last_name: ''
+                dob: 0000-00-00
+                email: bafo@test.com
+                mobile: 0784066539
+                region: Eastern Cape
+                created_at: ''
+                updated_at: ''
+              - id: 4
+                first_name: 3rd floor\
+                last_name: Unit 2C
+                dob: 0000-00-00
+                email: lindsay.cragg@adidas.com
+                mobile: 0605799070
+                region: ''
+                created_at: ''
+                updated_at: ''
+              - id: 5
+                first_name: ''
+                last_name: ''
+                dob: ''
+                email: bradley.stern@adidas.com
+                mobile: 
+                region: ''
+                created_at: ''
+                updated_at: ''
+              meta:
+                pagination:
+                  total: 17169
+                  count: 5
+                  per_page: 5
+                  current_page: 1
+                  total_pages: 3434
+                  links:
+                    next: https://api.stage.reebokdelta.co.za/v1/users?page=2
+          headers:
+            Access-Control-Allow-Credentials:
+              type: string
+              default: true
+            Access-Control-Allow-Headers:
+              type: string
+              default: Content-Type, Authorization, X-Requested-With
+            Access-Control-Allow-Methods:
+              type: string
+              default: POST, GET, OPTIONS, PUT, DELETE
+            Access-Control-Allow-Origin:
+              type: string
+              default: '*'
+            Access-Control-Max-Age:
+              type: string
+              default: 86400
+            Cache-Control:
+              type: string
+              default: no-cache, private
+            Connection:
+              type: string
+              default: Keep-Alive
+            Date:
+              type: string
+              default: Mon, 16 Apr 2018 11:56:09 GMT
+            Keep-Alive:
+              type: string
+              default: timeout=5, max=100
+            Server:
+              type: string
+              default: Apache
+            Transfer-Encoding:
+              type: string
+              default: chunked
+            Vary:
+              type: string
+              default: Authorization
+            X-Powered-By:
+              type: string
+              default: PHP/7.0.29-1~dotdeb+8.1
+    post:
+      description: Create a user.
+      summary: Create User
+      tags:
+      - User
+      operationId: V1UsersPost
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/CreateUserRequest'
+      responses:
+        200:
+          description: ''
+          headers: {}
+  /v1/users/481562:
+    get:
+      description: Get user
+      summary: Get User by ID
+      tags:
+      - User
+      operationId: V1Users481562Get
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      responses:
+        200:
+          description: ''
+          headers: {}
+  /v1/transactions:
+    get:
+      description: 'TODO: Add Description'
+      summary: List Transactions
+      tags:
+      - Transactions
+      operationId: V1TransactionsGet
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      responses:
+        200:
+          description: ''
+          headers: {}
+    post:
+      description: Create instore transaction
+      summary: Create ecom Transaction
+      tags:
+      - Transactions
+      operationId: V1TransactionsPost
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/CreateecomTransactionRequest'
+      responses:
+        200:
+          description: ''
+          headers: {}
+  /v1/transactions/1000/sale-entries:
+    get:
+      description: Get transaction items for a transaction
+      summary: List sales entries for transaction
+      tags:
+      - Transactions
+      operationId: V1Transactions1000SaleEntriesGet
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      responses:
+        200:
+          description: ''
+          headers: {}
+    post:
+      description: Create transaction sale entry
+      summary: Create sales entry for transaction
+      tags:
+      - Transactions
+      operationId: V1Transactions1000SaleEntriesPost
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/CreatesalesentryfortransactionRequest'
+      responses:
+        200:
+          description: ''
+          headers: {}
+  /v1/transactions/1000/sale-entries/1:
+    put:
+      description: Update transaction sale entry
+      summary: Update sales entry
+      tags:
+      - Transactions
+      operationId: V1Transactions1000SaleEntries1Put
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/UpdatesalesentryRequest'
+      responses:
+        200:
+          description: ''
+          headers: {}
+  /v1/members:
+    post:
+      description: Create trans member
+      summary: Create member
+      tags:
+      - Member
+      operationId: V1MembersPost
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/CreatememberRequest'
+      responses:
+        200:
+          description: ''
+          headers: {}
+    get:
+      description: Get trans members
+      summary: List global members
+      tags:
+      - Member
+      operationId: V1MembersGet
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      responses:
+        200:
+          description: ''
+          headers: {}
+  /v1/items:
+    get:
+      description: Get Items (trans_itemdesc)
+      summary: List items
+      tags:
+      - Item
+      operationId: V1ItemsGet
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      responses:
+        200:
+          description: ''
+          headers: {}
+    post:
+      description: Create trans item desc
+      summary: Create items
+      tags:
+      - Item
+      operationId: V1ItemsPost
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/CreateitemsRequest'
+      responses:
+        200:
+          description: ''
+          headers: {}
+  /v1/interests:
+    get:
+      description: List interests
+      summary: List interests
+      tags:
+      - Interests
+      operationId: V1InterestsGet
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      responses:
+        200:
+          description: ''
+          headers: {}
+definitions:
+  AuthLoginRequest:
+    title: AuthLoginRequest
+    example:
+      username: zando
+      password: zand123@o
+    type: object
+    properties:
+      username:
+        type: string
+      password:
+        type: string
+    required:
+    - username
+    - password
+  Finduserbyemail:
+    title: Finduserbyemail
+    example:
+      status: 200
+      data:
+      - id: 1
+        first_name: 3rd floor\
+        last_name: Unit 2C
+        dob: 0000-00-00
+        email: rushni.nordien@adidas.com
+        mobile: 0724440004
+        region: Western Cape
+        created_at: ''
+        updated_at: ''
+      - id: 668
+        first_name: Tash
+        last_name: Kiloh
+        dob: 1982-12-05
+        email: tash@sorbet.co.za
+        mobile: 0745892761
+        region: Gauteng
+        created_at: ''
+        updated_at: ''
+      - id: 3
+        first_name: Bafo
+        last_name: ''
+        dob: 0000-00-00
+        email: bafo@test.com
+        mobile: 0784066539
+        region: Eastern Cape
+        created_at: ''
+        updated_at: ''
+      - id: 4
+        first_name: 3rd floor\
+        last_name: Unit 2C
+        dob: 0000-00-00
+        email: lindsay.cragg@adidas.com
+        mobile: 0605799070
+        region: ''
+        created_at: ''
+        updated_at: ''
+      - id: 5
+        first_name: ''
+        last_name: ''
+        dob: ''
+        email: bradley.stern@adidas.com
+        mobile: 
+        region: ''
+        created_at: ''
+        updated_at: ''
+      meta:
+        pagination:
+          total: 17169
+          count: 5
+          per_page: 5
+          current_page: 1
+          total_pages: 3434
+          links:
+            next: https://api.stage.reebokdelta.co.za/v1/users?page=2
+    type: object
+    properties:
+      status:
+        type: integer
+        format: int32
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Datum'
+      meta:
+        $ref: '#/definitions/Meta'
+    required:
+    - status
+    - data
+    - meta
+  Datum:
+    title: Datum
+    example:
+      id: 1
+      first_name: 3rd floor\
+      last_name: Unit 2C
+      dob: 0000-00-00
+      email: rushni.nordien@adidas.com
+      mobile: 0724440004
+      region: Western Cape
+      created_at: ''
+      updated_at: ''
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      first_name:
+        type: string
+      last_name:
+        type: string
+      dob:
+        type: string
+      email:
+        type: string
+      mobile:
+        type: string
+      region:
+        type: string
+      created_at:
+        type: string
+      updated_at:
+        type: string
+    required:
+    - id
+    - first_name
+    - last_name
+    - dob
+    - email
+    - mobile
+    - region
+    - created_at
+    - updated_at
+  Meta:
+    title: Meta
+    example:
+      pagination:
+        total: 17169
+        count: 5
+        per_page: 5
+        current_page: 1
+        total_pages: 3434
+        links:
+          next: https://api.stage.reebokdelta.co.za/v1/users?page=2
+    type: object
+    properties:
+      pagination:
+        $ref: '#/definitions/Pagination'
+    required:
+    - pagination
+  Pagination:
+    title: Pagination
+    example:
+      total: 17169
+      count: 5
+      per_page: 5
+      current_page: 1
+      total_pages: 3434
+      links:
+        next: https://api.stage.reebokdelta.co.za/v1/users?page=2
+    type: object
+    properties:
+      total:
+        type: integer
+        format: int32
+      count:
+        type: integer
+        format: int32
+      per_page:
+        type: integer
+        format: int32
+      current_page:
+        type: integer
+        format: int32
+      total_pages:
+        type: integer
+        format: int32
+      links:
+        $ref: '#/definitions/Links'
+    required:
+    - total
+    - count
+    - per_page
+    - current_page
+    - total_pages
+    - links
+  Links:
+    title: Links
+    example:
+      next: https://api.stage.reebokdelta.co.za/v1/users?page=2
+    type: object
+    properties:
+      next:
+        type: string
+    required:
+    - next
+  CreateUserRequest:
+    title: CreateUserRequest
+    example:
+      first_name: Jane
+      last_name: Doe
+      dob: 2000-01-01
+      email: jane.doe@example.com
+      mobile: 27211234567
+      platform: ecomm
+      interests:
+      - 1
+      - 3
+    type: object
+    properties:
+      first_name:
+        type: string
+      last_name:
+        type: string
+      dob:
+        type: string
+      email:
+        type: string
+      mobile:
+        type: string
+      platform:
+        type: string
+      interests:
+        type: array
+        items:
+          type: string
+    required:
+    - first_name
+    - last_name
+    - dob
+    - email
+    - mobile
+    - platform
+    - interests
+  CreateecomTransactionRequest:
+    title: CreateecomTransactionRequest
+    example:
+      transno: 1003
+      transdate: 2018-02-08
+      trans_amount: 589.23000000000002
+      no_items: 5
+      userid: 481562
+      type: FO
+      identifier: 002
+      rbo_memberno: 1111111111
+      ext_memberno: 222222222
+      storeno: za123
+      delivery_address: 12 Seuss way
+      pos_termno: 555
+      cardno: 6000555553447777
+    type: object
+    properties:
+      transno:
+        type: integer
+        format: int32
+      transdate:
+        type: string
+      trans_amount:
+        type: number
+        format: double
+      no_items:
+        type: integer
+        format: int32
+      userid:
+        type: integer
+        format: int32
+      type:
+        type: string
+      identifier:
+        type: string
+      rbo_memberno:
+        type: string
+      ext_memberno:
+        type: string
+      storeno:
+        type: string
+      delivery_address:
+        type: string
+      pos_termno:
+        type: string
+      cardno:
+        type: string
+    required:
+    - transno
+    - transdate
+    - trans_amount
+    - no_items
+    - userid
+    - type
+    - identifier
+    - rbo_memberno
+    - ext_memberno
+    - storeno
+    - delivery_address
+    - pos_termno
+    - cardno
+  CreateglobaltransactionRequest:
+    title: CreateglobaltransactionRequest
+    example:
+      transno: 3030
+      transdate: 2018-02-08
+      trans_amount: 758.34000000000003
+      no_items: 1
+      userid: 481562
+      type: ecomm
+      storeno: za123
+      cardno: 6000555553447777
+      id_customer: 999
+      email: example@example.com
+    type: object
+    properties:
+      transno:
+        type: integer
+        format: int32
+      transdate:
+        type: string
+      trans_amount:
+        type: number
+        format: double
+      no_items:
+        type: integer
+        format: int32
+      userid:
+        type: integer
+        format: int32
+      type:
+        type: string
+      storeno:
+        type: string
+      cardno:
+        type: string
+      id_customer:
+        type: string
+      email:
+        type: string
+    required:
+    - transno
+    - transdate
+    - trans_amount
+    - no_items
+    - userid
+    - type
+    - storeno
+    - cardno
+    - id_customer
+    - email
+  CreatesalesentryfortransactionRequest:
+    title: CreatesalesentryfortransactionRequest
+    example:
+      itemno: 1
+      transdate: 2018-02-08
+      item_amount: 100.23
+      quantity: 2
+      type: FO
+    type: object
+    properties:
+      itemno:
+        type: integer
+        format: int32
+      transdate:
+        type: string
+      item_amount:
+        type: number
+        format: double
+      quantity:
+        type: integer
+        format: int32
+      type:
+        type: string
+    required:
+    - itemno
+    - transdate
+    - item_amount
+    - quantity
+    - type
+  UpdatesalesentryRequest:
+    title: UpdatesalesentryRequest
+    example:
+      storeno: za123
+      identifier: 002
+      colourway: blue/red
+    type: object
+    properties:
+      storeno:
+        type: string
+      identifier:
+        type: string
+      colourway:
+        type: string
+    required:
+    - storeno
+    - identifier
+    - colourway
+  CreatememberRequest:
+    title: CreatememberRequest
+    example:
+      rbo_memberno: 1111123334454555
+      ext_memberno: 8886667775556767
+    type: object
+    properties:
+      rbo_memberno:
+        type: string
+      ext_memberno:
+        type: string
+    required:
+    - rbo_memberno
+    - ext_memberno
+  CreateitemsRequest:
+    title: CreateitemsRequest
+    example:
+      article_nr: 010001
+      description: Supernova Light 6 W
+      colourway: RUNWHT/SIRRE
+      division: FOOTWEAR
+      gender: WOMENS
+      sport_category: RUNNING
+      product_group: SHOES
+      product_type: SHOES - LOW (NON FOOTBALL)
+      first_season: F07
+      last_season: F07
+      season: CURRENT-2+
+      business_segment: RUNNING FTW ADIDAS
+      sales_line: SUPERNOVA
+      marketing_line: LIGHT
+    type: object
+    properties:
+      article_nr:
+        type: string
+      description:
+        type: string
+      colourway:
+        type: string
+      division:
+        type: string
+      gender:
+        type: string
+      sport_category:
+        type: string
+      product_group:
+        type: string
+      product_type:
+        type: string
+      first_season:
+        type: string
+      last_season:
+        type: string
+      season:
+        type: string
+      business_segment:
+        type: string
+      sales_line:
+        type: string
+      marketing_line:
+        type: string
+    required:
+    - article_nr
+    - description
+    - colourway
+    - division
+    - gender
+    - sport_category
+    - product_group
+    - product_type
+    - first_season
+    - last_season
+    - season
+    - business_segment
+    - sales_line
+    - marketing_line
+tags:
+- name: Authentication
+- name: User
+- name: Transactions
+- name: Member
+- name: Item
+- name: Interests
