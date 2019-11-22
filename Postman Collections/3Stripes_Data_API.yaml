@@ -20,7 +20,7 @@ paths:
       summary: Auth Login
       tags:
       - Authentication
-      operationId: AuthLoginPost
+      operationId: AuthLogin
       deprecated: false
       produces:
       - application/json
@@ -51,7 +51,7 @@ paths:
       summary: List Users
       tags:
       - User
-      operationId: V1UsersGet
+      operationId: ListUsers
       deprecated: false
       produces:
       - application/json
@@ -179,7 +179,7 @@ paths:
       summary: Create User
       tags:
       - User
-      operationId: V1UsersPost
+      operationId: CreateUser
       deprecated: false
       produces:
       - application/json
@@ -210,7 +210,7 @@ paths:
       summary: Get User by ID
       tags:
       - User
-      operationId: V1Users481562Get
+      operationId: GetUserbyID
       deprecated: false
       produces:
       - application/json
@@ -230,7 +230,7 @@ paths:
       summary: List Transactions
       tags:
       - Transactions
-      operationId: V1TransactionsGet
+      operationId: ListTransactions
       deprecated: false
       produces:
       - application/json
@@ -249,7 +249,7 @@ paths:
       summary: Create ecom Transaction
       tags:
       - Transactions
-      operationId: V1TransactionsPost
+      operationId: CreateecomTransaction
       deprecated: false
       produces:
       - application/json
@@ -280,7 +280,7 @@ paths:
       summary: List sales entries for transaction
       tags:
       - Transactions
-      operationId: V1Transactions1000SaleEntriesGet
+      operationId: Listsalesentriesfortransaction
       deprecated: false
       produces:
       - application/json
@@ -299,7 +299,7 @@ paths:
       summary: Create sales entry for transaction
       tags:
       - Transactions
-      operationId: V1Transactions1000SaleEntriesPost
+      operationId: Createsalesentryfortransaction
       deprecated: false
       produces:
       - application/json
@@ -330,7 +330,7 @@ paths:
       summary: Update sales entry
       tags:
       - Transactions
-      operationId: V1Transactions1000SaleEntries1Put
+      operationId: Updatesalesentry
       deprecated: false
       produces:
       - application/json
@@ -361,7 +361,7 @@ paths:
       summary: Create member
       tags:
       - Member
-      operationId: V1MembersPost
+      operationId: Createmember
       deprecated: false
       produces:
       - application/json
@@ -391,7 +391,7 @@ paths:
       summary: List global members
       tags:
       - Member
-      operationId: V1MembersGet
+      operationId: Listglobalmembers
       deprecated: false
       produces:
       - application/json
@@ -411,7 +411,7 @@ paths:
       summary: List items
       tags:
       - Item
-      operationId: V1ItemsGet
+      operationId: Listitems
       deprecated: false
       produces:
       - application/json
@@ -430,7 +430,7 @@ paths:
       summary: Create items
       tags:
       - Item
-      operationId: V1ItemsPost
+      operationId: Createitems
       deprecated: false
       produces:
       - application/json
@@ -461,7 +461,7 @@ paths:
       summary: List interests
       tags:
       - Interests
-      operationId: V1InterestsGet
+      operationId: Listinterests
       deprecated: false
       produces:
       - application/json
