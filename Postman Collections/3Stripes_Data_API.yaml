@@ -2,7 +2,6 @@ swagger: '2.0'
 info:
   version: '1.0'
   title: adidas 3S API
-  description: 'TODO: Add Description'
   contact: {}
 host: example.com
 basePath: /
@@ -16,7 +15,6 @@ produces:
 paths:
   /auth/login:
     post:
-      description: 'TODO: Add Description'
       summary: Auth Login
       tags:
       - Authentication
@@ -226,7 +224,6 @@ paths:
           headers: {}
   /v1/transactions:
     get:
-      description: 'TODO: Add Description'
       summary: List Transactions
       tags:
       - Transactions
