@@ -22,6 +22,8 @@ paths:
       deprecated: false
       produces:
       - application/json
+      consumes:
+      - application/json
       parameters:
       - name: Authorization
         in: header
@@ -181,6 +183,8 @@ paths:
       deprecated: false
       produces:
       - application/json
+      consumes:
+      - application/json
       parameters:
       - name: Authorization
         in: header
@@ -250,6 +254,8 @@ paths:
       deprecated: false
       produces:
       - application/json
+      consumes:
+      - application/json
       parameters:
       - name: Authorization
         in: header
@@ -300,6 +306,8 @@ paths:
       deprecated: false
       produces:
       - application/json
+      consumes:
+      - application/json
       parameters:
       - name: Authorization
         in: header
@@ -331,6 +339,8 @@ paths:
       deprecated: false
       produces:
       - application/json
+      consumes:
+      - application/json
       parameters:
       - name: Authorization
         in: header
@@ -361,6 +371,8 @@ paths:
       operationId: Createmember
       deprecated: false
       produces:
+      - application/json
+      consumes:
       - application/json
       parameters:
       - name: Authorization
@@ -430,6 +442,8 @@ paths:
       operationId: Createitems
       deprecated: false
       produces:
+      - application/json
+      consumes:
       - application/json
       parameters:
       - name: Authorization
