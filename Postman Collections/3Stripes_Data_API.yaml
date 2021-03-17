@@ -42,7 +42,7 @@ paths:
         schema:
           $ref: '#/definitions/AuthLoginRequest'
       responses:
-        200:
+        '200':
           description: ''
           headers: {}
   /v1/users:
@@ -72,7 +72,7 @@ paths:
         type: string
         description: ''
       responses:
-        200:
+        '200':
           description: OK
           schema:
             $ref: '#/definitions/Finduserbyemail'
@@ -203,7 +203,7 @@ paths:
         schema:
           $ref: '#/definitions/CreateUserRequest'
       responses:
-        200:
+        '200':
           description: ''
           headers: {}
   /v1/users/481562:
@@ -223,7 +223,7 @@ paths:
         default: Bearer {token}
         type: string
       responses:
-        200:
+        '200':
           description: ''
           headers: {}
   /v1/transactions:
@@ -242,7 +242,7 @@ paths:
         default: Bearer {token}
         type: string
       responses:
-        200:
+        '200':
           description: ''
           headers: {}
     post:
@@ -274,7 +274,7 @@ paths:
         schema:
           $ref: '#/definitions/CreateecomTransactionRequest'
       responses:
-        200:
+        '200':
           description: ''
           headers: {}
   /v1/transactions/1000/sale-entries:
@@ -294,7 +294,7 @@ paths:
         default: Bearer {token}
         type: string
       responses:
-        200:
+        '200':
           description: ''
           headers: {}
     post:
@@ -326,7 +326,7 @@ paths:
         schema:
           $ref: '#/definitions/CreatesalesentryfortransactionRequest'
       responses:
-        200:
+        '200':
           description: ''
           headers: {}
   /v1/transactions/1000/sale-entries/1:
@@ -359,7 +359,7 @@ paths:
         schema:
           $ref: '#/definitions/UpdatesalesentryRequest'
       responses:
-        200:
+        '200':
           description: ''
           headers: {}
   /v1/members:
@@ -392,7 +392,7 @@ paths:
         schema:
           $ref: '#/definitions/CreatememberRequest'
       responses:
-        200:
+        '200':
           description: ''
           headers: {}
     get:
@@ -411,7 +411,7 @@ paths:
         default: Bearer {token}
         type: string
       responses:
-        200:
+        '200':
           description: ''
           headers: {}
   /v1/items:
@@ -431,7 +431,7 @@ paths:
         default: Bearer {token}
         type: string
       responses:
-        200:
+        '200':
           description: ''
           headers: {}
     post:
@@ -463,7 +463,7 @@ paths:
         schema:
           $ref: '#/definitions/CreateitemsRequest'
       responses:
-        200:
+        '200':
           description: ''
           headers: {}
   /v1/interests:
@@ -483,7 +483,7 @@ paths:
         default: Bearer {token}
         type: string
       responses:
-        200:
+        '200':
           description: ''
           headers: {}
 definitions:
@@ -681,6 +681,23 @@ definitions:
         type: string
     required:
     - next
+  Includetransactionsandinterestsonuserlist:
+    title: Includetransactionsandinterestsonuserlist
+    type: object
+    properties:
+      status:
+        type: integer
+        format: int32
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Datum1'
+      meta:
+        $ref: '#/definitions/Meta'
+    required:
+    - status
+    - data
+    - meta
   Datum1:
     title: Datum1
     type: object
