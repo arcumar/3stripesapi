@@ -1,658 +1,1164 @@
-{
-  "info": {
-    "_postman_id": "218351-8190b101-dfc8-3073-f25f-a555d6232cc2",
-    "name": "adidas 3S API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
-  },
-  "item": [
-    {
-      "name": "Authentication",
-      "item": [
-        {
-          "name": "Auth Login",
-          "_postman_id": "218351-0c318898-1763-8f35-f8cc-f068ff381b7e",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"username\":\"zando\",\n  \"password\":\"zand123@o\"\n}"
-            },
-            "url": "{{base_url}}/auth/login"
-          },
-          "response": []
-        }
-      ],
-      "_postman_id": "218351-cb9b7910-1283-1ebe-6fdd-1d59f0bc331e"
-    },
-    {
-      "name": "User",
-      "item": [
-        {
-          "name": "List Users",
-          "_postman_id": "218351-d6c18e88-ef1f-700d-3bfc-e046d4a1c633",
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{token}}"
-              }
-            },
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{base_url}}/v1/users?filters[email]=jane.doe@example.com&include=transactions,interests",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "v1",
-                "users"
-              ],
-              "query": [
-                {
-                  "key": "filters[email]",
-                  "value": "jane.doe@example.com"
-                },
-                {
-                  "key": "include",
-                  "value": "transactions,interests"
-                },
-                {
-                  "key": "test",
-                  "value": "haha",
-                  "disabled": true
-                }
-              ]
-            },
-            "description": "Get users"
-          },
-          "response": [
-            {
-              "id": "218351-8893cdb7-3abb-decb-0e0d-2b53c5b5b5aa",
-              "name": "Find user by email",
-              "originalRequest": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "{{base_url}}/v1/users?email=jane.doe@example.com",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "v1",
-                    "users"
-                  ],
-                  "query": [
-                    {
-                      "key": "email",
-                      "value": "jane.doe@example.com"
-                    }
-                  ]
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "json",
-              "header": [
-                {
-                  "key": "Access-Control-Allow-Credentials",
-                  "value": "true",
-                  "name": "Access-Control-Allow-Credentials",
-                  "description": ""
-                },
-                {
-                  "key": "Access-Control-Allow-Headers",
-                  "value": "Content-Type, Authorization, X-Requested-With",
-                  "name": "Access-Control-Allow-Headers",
-                  "description": ""
-                },
-                {
-                  "key": "Access-Control-Allow-Methods",
-                  "value": "POST, GET, OPTIONS, PUT, DELETE",
-                  "name": "Access-Control-Allow-Methods",
-                  "description": ""
-                },
-                {
-                  "key": "Access-Control-Allow-Origin",
-                  "value": "*",
-                  "name": "Access-Control-Allow-Origin",
-                  "description": ""
-                },
-                {
-                  "key": "Access-Control-Max-Age",
-                  "value": "86400",
-                  "name": "Access-Control-Max-Age",
-                  "description": ""
-                },
-                {
-                  "key": "Cache-Control",
-                  "value": "no-cache, private",
-                  "name": "Cache-Control",
-                  "description": ""
-                },
-                {
-                  "key": "Connection",
-                  "value": "Keep-Alive",
-                  "name": "Connection",
-                  "description": ""
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json",
-                  "name": "Content-Type",
-                  "description": ""
-                },
-                {
-                  "key": "Date",
-                  "value": "Mon, 16 Apr 2018 11:56:09 GMT",
-                  "name": "Date",
-                  "description": ""
-                },
-                {
-                  "key": "Keep-Alive",
-                  "value": "timeout=5, max=100",
-                  "name": "Keep-Alive",
-                  "description": ""
-                },
-                {
-                  "key": "Server",
-                  "value": "Apache",
-                  "name": "Server",
-                  "description": ""
-                },
-                {
-                  "key": "Transfer-Encoding",
-                  "value": "chunked",
-                  "name": "Transfer-Encoding",
-                  "description": ""
-                },
-                {
-                  "key": "Vary",
-                  "value": "Authorization",
-                  "name": "Vary",
-                  "description": ""
-                },
-                {
-                  "key": "X-Powered-By",
-                  "value": "PHP/7.0.29-1~dotdeb+8.1",
-                  "name": "X-Powered-By",
-                  "description": ""
-                }
-              ],
-              "cookie": [],
-              "responseTime": "720",
-              "body": "{\"status\":200,\"data\":[{\"id\":1,\"first_name\":\"3rd floor\\\\\",\"last_name\":\"Unit 2C\",\"dob\":\"0000-00-00\",\"email\":\"rushni.nordien@adidas.com\",\"mobile\":\"0724440004\",\"region\":\"Western Cape\",\"created_at\":\"\",\"updated_at\":\"\"},{\"id\":668,\"first_name\":\"Tash\",\"last_name\":\"Kiloh\",\"dob\":\"1982-12-05\",\"email\":\"tash@sorbet.co.za\",\"mobile\":\"0745892761\",\"region\":\"Gauteng\",\"created_at\":\"\",\"updated_at\":\"\"},{\"id\":3,\"first_name\":\"Bafo\",\"last_name\":\"\",\"dob\":\"0000-00-00\",\"email\":\"bafo@test.com\",\"mobile\":\"0784066539\",\"region\":\"Eastern Cape\",\"created_at\":\"\",\"updated_at\":\"\"},{\"id\":4,\"first_name\":\"3rd floor\\\\\",\"last_name\":\"Unit 2C\",\"dob\":\"0000-00-00\",\"email\":\"lindsay.cragg@adidas.com\",\"mobile\":\"0605799070\",\"region\":\"\",\"created_at\":\"\",\"updated_at\":\"\"},{\"id\":5,\"first_name\":\"\",\"last_name\":\"\",\"dob\":\"\",\"email\":\"bradley.stern@adidas.com\",\"mobile\":null,\"region\":\"\",\"created_at\":\"\",\"updated_at\":\"\"}],\"meta\":{\"pagination\":{\"total\":17169,\"count\":5,\"per_page\":5,\"current_page\":1,\"total_pages\":3434,\"links\":{\"next\":\"https:\\/\\/api.stage.reebokdelta.co.za\\/v1\\/users?page=2\"}}}}"
-            },
-            {
-              "id": "218351-5d326535-720e-ce26-0c3e-ca50b5ba9be9",
-              "name": "Include transactions and interests on  user list",
-              "originalRequest": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "{{base_url}}/v1/users?include=transactions,interests",
-                  "host": [
-                    "{{base_url}}"
-                  ],
-                  "path": [
-                    "v1",
-                    "users"
-                  ],
-                  "query": [
-                    {
-                      "key": "include",
-                      "value": "transactions,interests"
-                    }
-                  ]
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "json",
-              "header": [
-                {
-                  "key": "Access-Control-Allow-Credentials",
-                  "value": "true",
-                  "name": "Access-Control-Allow-Credentials",
-                  "description": ""
-                },
-                {
-                  "key": "Access-Control-Allow-Headers",
-                  "value": "Content-Type, Authorization, X-Requested-With",
-                  "name": "Access-Control-Allow-Headers",
-                  "description": ""
-                },
-                {
-                  "key": "Access-Control-Allow-Methods",
-                  "value": "POST, GET, OPTIONS, PUT, DELETE",
-                  "name": "Access-Control-Allow-Methods",
-                  "description": ""
-                },
-                {
-                  "key": "Access-Control-Allow-Origin",
-                  "value": "*",
-                  "name": "Access-Control-Allow-Origin",
-                  "description": ""
-                },
-                {
-                  "key": "Access-Control-Max-Age",
-                  "value": "86400",
-                  "name": "Access-Control-Max-Age",
-                  "description": ""
-                },
-                {
-                  "key": "Cache-Control",
-                  "value": "no-cache, private",
-                  "name": "Cache-Control",
-                  "description": ""
-                },
-                {
-                  "key": "Connection",
-                  "value": "Keep-Alive",
-                  "name": "Connection",
-                  "description": ""
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json",
-                  "name": "Content-Type",
-                  "description": ""
-                },
-                {
-                  "key": "Date",
-                  "value": "Mon, 16 Apr 2018 11:57:18 GMT",
-                  "name": "Date",
-                  "description": ""
-                },
-                {
-                  "key": "Keep-Alive",
-                  "value": "timeout=5, max=100",
-                  "name": "Keep-Alive",
-                  "description": ""
-                },
-                {
-                  "key": "Server",
-                  "value": "Apache",
-                  "name": "Server",
-                  "description": ""
-                },
-                {
-                  "key": "Transfer-Encoding",
-                  "value": "chunked",
-                  "name": "Transfer-Encoding",
-                  "description": ""
-                },
-                {
-                  "key": "Vary",
-                  "value": "Authorization",
-                  "name": "Vary",
-                  "description": ""
-                },
-                {
-                  "key": "X-Powered-By",
-                  "value": "PHP/7.0.29-1~dotdeb+8.1",
-                  "name": "X-Powered-By",
-                  "description": ""
-                }
-              ],
-              "cookie": [],
-              "responseTime": "284",
-              "body": "{\"status\":200,\"data\":[{\"id\":1,\"first_name\":\"3rd floor\\\\\",\"last_name\":\"Unit 2C\",\"dob\":\"0000-00-00\",\"email\":\"rushni.nordien@adidas.com\",\"mobile\":\"0724440004\",\"region\":\"Western Cape\",\"created_at\":\"\",\"updated_at\":\"\",\"transactions\":{\"data\":[]},\"interests\":{\"data\":[{\"userid\":1,\"created_at\":null,\"interest\":{\"data\":[]}},{\"userid\":1,\"created_at\":null,\"interest\":{\"data\":[]}},{\"userid\":1,\"created_at\":null,\"interest\":{\"data\":{\"id\":9,\"title\":\"Combat Sports\",\"user_spelling\":\"\",\"BU\":\"non\",\"type\":\"aut\",\"grouping\":\"all\",\"position\":\"aperiam\",\"enabled\":1,\"removed\":0,\"sportsgroup_id\":0,\"created_at\":\"2018-03-09 10:49:44\",\"updated_at\":\"2018-03-09 10:49:44\"}}},{\"userid\":1,\"created_at\":null,\"interest\":{\"data\":{\"id\":10,\"title\":\"Crossfit\",\"user_spelling\":\"\",\"BU\":\"qui\",\"type\":\"earum\",\"grouping\":\"all\",\"position\":\"perferendis\",\"enabled\":1,\"removed\":0,\"sportsgroup_id\":0,\"created_at\":\"2018-03-09 10:49:44\",\"updated_at\":\"2018-03-09 10:49:44\"}}},{\"userid\":1,\"created_at\":null,\"interest\":{\"data\":{\"id\":11,\"title\":\"Yoga\",\"user_spelling\":\"\",\"BU\":\"sunt\",\"type\":\"nostrum\",\"grouping\":\"all\",\"position\":\"ullam\",\"enabled\":1,\"removed\":0,\"sportsgroup_id\":0,\"created_at\":\"2018-03-09 10:49:44\",\"updated_at\":\"2018-03-09 10:49:44\"}}},{\"userid\":1,\"created_at\":null,\"interest\":{\"data\":{\"id\":12,\"title\":\"Dance\",\"user_spelling\":\"\",\"BU\":\"vel\",\"type\":\"omnis\",\"grouping\":\"all\",\"position\":\"aliquid\",\"enabled\":1,\"removed\":0,\"sportsgroup_id\":0,\"created_at\":\"2018-03-09 10:49:44\",\"updated_at\":\"2018-03-09 10:49:44\"}}},{\"userid\":1,\"created_at\":null,\"interest\":{\"data\":{\"id\":13,\"title\":\"Obstacle Course Racing\",\"user_spelling\":\"\",\"BU\":\"et\",\"type\":\"eos\",\"grouping\":\"all\",\"position\":\"sit\",\"enabled\":1,\"removed\":0,\"sportsgroup_id\":0,\"created_at\":\"2018-03-09 10:49:44\",\"updated_at\":\"2018-03-09 10:49:44\"}}},{\"userid\":1,\"created_at\":null,\"interest\":{\"data\":{\"id\":14,\"title\":\"Classics\",\"user_spelling\":\"\",\"BU\":\"modi\",\"type\":\"dolorum\",\"grouping\":\"all\",\"position\":\"voluptas\",\"enabled\":1,\"removed\":0,\"sportsgroup_id\":0,\"created_at\":\"2018-03-09 10:49:44\",\"updated_at\":\"2018-03-09 10:49:44\"}}}]}},{\"id\":668,\"first_name\":\"Tash\",\"last_name\":\"Kiloh\",\"dob\":\"1982-12-05\",\"email\":\"tash@sorbet.co.za\",\"mobile\":\"0745892761\",\"region\":\"Gauteng\",\"created_at\":\"\",\"updated_at\":\"\",\"transactions\":{\"data\":[]},\"interests\":{\"data\":[{\"userid\":668,\"created_at\":null,\"interest\":{\"data\":{\"id\":10,\"title\":\"Crossfit\",\"user_spelling\":\"\",\"BU\":\"qui\",\"type\":\"earum\",\"grouping\":\"all\",\"position\":\"perferendis\",\"enabled\":1,\"removed\":0,\"sportsgroup_id\":0,\"created_at\":\"2018-03-09 10:49:44\",\"updated_at\":\"2018-03-09 10:49:44\"}}},{\"userid\":668,\"created_at\":null,\"interest\":{\"data\":{\"id\":11,\"title\":\"Yoga\",\"user_spelling\":\"\",\"BU\":\"sunt\",\"type\":\"nostrum\",\"grouping\":\"all\",\"position\":\"ullam\",\"enabled\":1,\"removed\":0,\"sportsgroup_id\":0,\"created_at\":\"2018-03-09 10:49:44\",\"updated_at\":\"2018-03-09 10:49:44\"}}},{\"userid\":668,\"created_at\":null,\"interest\":{\"data\":{\"id\":13,\"title\":\"Obstacle Course Racing\",\"user_spelling\":\"\",\"BU\":\"et\",\"type\":\"eos\",\"grouping\":\"all\",\"position\":\"sit\",\"enabled\":1,\"removed\":0,\"sportsgroup_id\":0,\"created_at\":\"2018-03-09 10:49:44\",\"updated_at\":\"2018-03-09 10:49:44\"}}}]}},{\"id\":3,\"first_name\":\"Bafo\",\"last_name\":\"\",\"dob\":\"0000-00-00\",\"email\":\"bafo@test.com\",\"mobile\":\"0784066539\",\"region\":\"Eastern Cape\",\"created_at\":\"\",\"updated_at\":\"\",\"transactions\":{\"data\":[]},\"interests\":{\"data\":[]}},{\"id\":4,\"first_name\":\"3rd floor\\\\\",\"last_name\":\"Unit 2C\",\"dob\":\"0000-00-00\",\"email\":\"lindsay.cragg@adidas.com\",\"mobile\":\"0605799070\",\"region\":\"\",\"created_at\":\"\",\"updated_at\":\"\",\"transactions\":{\"data\":[]},\"interests\":{\"data\":[{\"userid\":4,\"created_at\":null,\"interest\":{\"data\":[]}},{\"userid\":4,\"created_at\":null,\"interest\":{\"data\":[]}},{\"userid\":4,\"created_at\":null,\"interest\":{\"data\":{\"id\":9,\"title\":\"Combat Sports\",\"user_spelling\":\"\",\"BU\":\"non\",\"type\":\"aut\",\"grouping\":\"all\",\"position\":\"aperiam\",\"enabled\":1,\"removed\":0,\"sportsgroup_id\":0,\"created_at\":\"2018-03-09 10:49:44\",\"updated_at\":\"2018-03-09 10:49:44\"}}},{\"userid\":4,\"created_at\":null,\"interest\":{\"data\":{\"id\":10,\"title\":\"Crossfit\",\"user_spelling\":\"\",\"BU\":\"qui\",\"type\":\"earum\",\"grouping\":\"all\",\"position\":\"perferendis\",\"enabled\":1,\"removed\":0,\"sportsgroup_id\":0,\"created_at\":\"2018-03-09 10:49:44\",\"updated_at\":\"2018-03-09 10:49:44\"}}},{\"userid\":4,\"created_at\":null,\"interest\":{\"data\":{\"id\":11,\"title\":\"Yoga\",\"user_spelling\":\"\",\"BU\":\"sunt\",\"type\":\"nostrum\",\"grouping\":\"all\",\"position\":\"ullam\",\"enabled\":1,\"removed\":0,\"sportsgroup_id\":0,\"created_at\":\"2018-03-09 10:49:44\",\"updated_at\":\"2018-03-09 10:49:44\"}}},{\"userid\":4,\"created_at\":null,\"interest\":{\"data\":{\"id\":12,\"title\":\"Dance\",\"user_spelling\":\"\",\"BU\":\"vel\",\"type\":\"omnis\",\"grouping\":\"all\",\"position\":\"aliquid\",\"enabled\":1,\"removed\":0,\"sportsgroup_id\":0,\"created_at\":\"2018-03-09 10:49:44\",\"updated_at\":\"2018-03-09 10:49:44\"}}},{\"userid\":4,\"created_at\":null,\"interest\":{\"data\":{\"id\":13,\"title\":\"Obstacle Course Racing\",\"user_spelling\":\"\",\"BU\":\"et\",\"type\":\"eos\",\"grouping\":\"all\",\"position\":\"sit\",\"enabled\":1,\"removed\":0,\"sportsgroup_id\":0,\"created_at\":\"2018-03-09 10:49:44\",\"updated_at\":\"2018-03-09 10:49:44\"}}}]}},{\"id\":5,\"first_name\":\"\",\"last_name\":\"\",\"dob\":\"\",\"email\":\"bradley.stern@adidas.com\",\"mobile\":null,\"region\":\"\",\"created_at\":\"\",\"updated_at\":\"\",\"transactions\":{\"data\":[]},\"interests\":{\"data\":[{\"userid\":5,\"created_at\":null,\"interest\":{\"data\":[]}},{\"userid\":5,\"created_at\":null,\"interest\":{\"data\":[]}},{\"userid\":5,\"created_at\":null,\"interest\":{\"data\":{\"id\":9,\"title\":\"Combat Sports\",\"user_spelling\":\"\",\"BU\":\"non\",\"type\":\"aut\",\"grouping\":\"all\",\"position\":\"aperiam\",\"enabled\":1,\"removed\":0,\"sportsgroup_id\":0,\"created_at\":\"2018-03-09 10:49:44\",\"updated_at\":\"2018-03-09 10:49:44\"}}}]}}],\"meta\":{\"pagination\":{\"total\":17169,\"count\":5,\"per_page\":5,\"current_page\":1,\"total_pages\":3434,\"links\":{\"next\":\"https:\\/\\/api.stage.reebokdelta.co.za\\/v1\\/users?page=2\"}}}}"
-            }
-          ]
-        },
-        {
-          "name": "List Users updated after date",
-          "_postman_id": "218351-7b0ea361-91d7-7f0a-9e26-3902320f712e",
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{token}}"
-              }
-            },
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{base_url}}/v1/users?filters[last_updated_at]=2018-04-09",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "v1",
-                "users"
-              ],
-              "query": [
-                {
-                  "key": "filters[last_updated_at]",
-                  "value": "2018-04-09"
-                },
-                {
-                  "key": "test",
-                  "value": "haha",
-                  "disabled": true
-                }
-              ]
-            },
-            "description": "List Users updated after date"
-          },
-          "response": []
-        },
-        {
-          "name": "Create User",
-          "_postman_id": "218351-a52f2095-729d-0710-0e61-68626ffbd375",
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{token}}"
-              }
-            },
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"first_name\":\"Jane\",\n  \"last_name\":\"Doe\",\n  \"dob\":\"2000-01-01\",\n  \"email\":\"jane.doe@example.com\",\n  \"mobile\":\"27211234567\",\n  \"platform\":\"ecomm\",\n  \"interests\":[ \"1\", \"3\" ]\n}"
-            },
-            "url": "{{base_url}}/v1/users",
-            "description": "Create a user."
-          },
-          "response": []
-        },
-        {
-          "name": "Get User by ID",
-          "_postman_id": "218351-a7848397-62ce-7b9f-3310-9ae4239495e1",
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{token}}"
-              }
-            },
-            "method": "GET",
-            "header": [],
-            "url": "{{base_url}}/v1/users/481562",
-            "description": "Get user"
-          },
-          "response": []
-        }
-      ],
-      "_postman_id": "218351-4d17691d-55a2-0c6d-b456-2db45fc3a5b5"
-    },
-    {
-      "name": "Transactions",
-      "item": [
-        {
-          "name": "List Transactions",
-          "_postman_id": "218351-d32bfd5c-1039-6a04-2fbf-09d35b3efc23",
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{token}}"
-              }
-            },
-            "method": "GET",
-            "header": [],
-            "url": "{{base_url}}/v1/transactions"
-          },
-          "response": []
-        },
-        {
-          "name": "Create ecom Transaction",
-          "_postman_id": "218351-7d37aef4-13cc-b059-11b9-46d1f0eafde1",
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{token}}"
-              }
-            },
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"transno\":1003,\n  \"transdate\":\"2018-02-08\",\n  \"trans_amount\":589.23,\n  \"no_items\":5,\n  \"userid\":481562,\n  \"type\":\"FO\",\n  \"identifier\":\"002\",\n  \"rbo_memberno\":\"1111111111\",\n  \"ext_memberno\":\"222222222\",\n  \"storeno\":\"za123\",\n  \"delivery_address\": \"12 Seuss way\",\n  \"pos_termno\":\"555\",\n  \"cardno\":\"6000555553447777\"\n}"
-            },
-            "url": "{{base_url}}/v1/transactions",
-            "description": "Create instore transaction"
-          },
-          "response": []
-        },
-        {
-          "name": "Create global transaction",
-          "_postman_id": "218351-0ef755e6-0d34-b253-b74a-a43b37d63b8a",
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{token}}"
-              }
-            },
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"transno\":3030,\n\t\"transdate\":\"2018-02-08\",\n\t\"trans_amount\":758.34,\n\t\"no_items\":1,\n\t\"userid\":481562,\n\t\"type\":\"ecomm\",\n\t\"storeno\":\"za123\",\n\t\"cardno\":\"6000555553447777\",\n\t\"id_customer\":\"999\",\n\t\"email\":\"example@example.com\"\n}"
-            },
-            "url": "{{base_url}}/v1/transactions",
-            "description": "Create ecomm transaction"
-          },
-          "response": []
-        },
-        {
-          "name": "List sales entries for transaction",
-          "_postman_id": "218351-355152ef-120b-4d72-3928-bca3e1d2509b",
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{token}}"
-              }
-            },
-            "method": "GET",
-            "header": [],
-            "url": "{{base_url}}/v1/transactions/1000/sale-entries",
-            "description": "Get transaction items for a transaction"
-          },
-          "response": []
-        },
-        {
-          "name": "Create sales entry for transaction",
-          "_postman_id": "218351-f3ea1964-efc9-ea81-6b11-43cb479b4680",
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{token}}"
-              }
-            },
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"itemno\":1,\n\t\"transdate\":\"2018-02-08\",\n\t\"item_amount\":100.23,\n\t\"quantity\":2,\n\t\"type\":\"FO\"\n}"
-            },
-            "url": "{{base_url}}/v1/transactions/1000/sale-entries",
-            "description": "Create transaction sale entry"
-          },
-          "response": []
-        },
-        {
-          "name": "Update sales entry",
-          "_postman_id": "218351-4574d24b-3772-9321-11b4-914a3feed1e8",
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{token}}"
-              }
-            },
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"storeno\":\"za123\",\n\t\"identifier\":\"002\",\n\t\"colourway\":\"blue/red\"\n}"
-            },
-            "url": "{{base_url}}/v1/transactions/1000/sale-entries/1",
-            "description": "Update transaction sale entry"
-          },
-          "response": []
-        }
-      ],
-      "_postman_id": "218351-a08dfdde-ff4c-6eb0-0db2-ee45742a8314"
-    },
-    {
-      "name": "Member",
-      "item": [
-        {
-          "name": "Create member",
-          "_postman_id": "218351-362b0b2d-eecd-414c-a620-22e694ff34bd",
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{token}}"
-              }
-            },
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"rbo_memberno\": \"1111123334454555\",\n    \"ext_memberno\": \"8886667775556767\"\n}"
-            },
-            "url": "{{base_url}}/v1/members",
-            "description": "Create trans member"
-          },
-          "response": []
-        },
-        {
-          "name": "List global members",
-          "_postman_id": "218351-e36632cd-70d7-aaa9-d927-1b3dfa33e637",
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{token}}"
-              }
-            },
-            "method": "GET",
-            "header": [],
-            "url": "{{base_url}}/v1/members",
-            "description": "Get trans members"
-          },
-          "response": []
-        }
-      ],
-      "_postman_id": "218351-0b675419-fd83-6ac2-ce19-0f062fad5ff3"
-    },
-    {
-      "name": "Item",
-      "item": [
-        {
-          "name": "List items",
-          "_postman_id": "218351-ee519c92-89e1-14cc-df82-fad8e6b756cc",
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{token}}"
-              }
-            },
-            "method": "GET",
-            "header": [],
-            "url": "{{base_url}}/v1/items",
-            "description": "Get Items (trans_itemdesc)"
-          },
-          "response": []
-        },
-        {
-          "name": "Create items",
-          "_postman_id": "218351-31aba36a-6af9-462c-1eb2-78c727207201",
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{token}}"
-              }
-            },
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"article_nr\":\"010001\",\n        \"description\":\"Supernova Light 6 W\",\n        \"colourway\":\"RUNWHT/SIRRE\",\n        \"division\":\"FOOTWEAR\",\n        \"gender\":\"WOMENS\",\n        \"sport_category\":\"RUNNING\",\n        \"product_group\":\"SHOES\",\n        \"product_type\":\"SHOES - LOW (NON FOOTBALL)\",\n        \"first_season\":\"F07\",\n        \"last_season\":\"F07\",\n        \"season\":\"CURRENT-2+\",\n        \"business_segment\":\"RUNNING FTW ADIDAS\",\n        \"sales_line\":\"SUPERNOVA\",\n        \"marketing_line\":\"LIGHT\"\n}"
-            },
-            "url": "{{base_url}}/v1/items",
-            "description": "Create trans item desc"
-          },
-          "response": []
-        }
-      ],
-      "_postman_id": "218351-f38d38af-4118-9a23-14f3-9e7dcc9639cc"
-    },
-    {
-      "name": "Interests",
-      "item": [
-        {
-          "name": "List interests",
-          "_postman_id": "218351-d4725512-e372-acf2-4423-bc2f1419d2f1",
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{token}}"
-              }
-            },
-            "method": "GET",
-            "header": [],
-            "url": "{{base_url}}/v1/interests",
-            "description": "List interests"
-          },
-          "response": []
-        }
-      ],
-      "_postman_id": "218351-18c78817-8887-e352-f3d4-3af66e09c621"
-    }
-  ]
-}
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: adidas 3S API
+  contact: {}
+host: example.com
+basePath: /
+securityDefinitions: {}
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /auth/login:
+    post:
+      summary: Auth Login
+      tags:
+      - Authentication
+      operationId: AuthLogin
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/AuthLoginRequest'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /v1/users:
+    get:
+      description: Get users
+      summary: List Users
+      tags:
+      - User
+      operationId: ListUsers
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: filters[email]
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: include
+        in: query
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Finduserbyemail'
+          examples:
+            application/json:
+              status: 200
+              data:
+              - id: 1
+                first_name: 3rd floor\
+                last_name: Unit 2C
+                dob: 0000-00-00
+                email: rushni.nordien@adidas.com
+                mobile: 0724440004
+                region: Western Cape
+                created_at: ''
+                updated_at: ''
+              - id: 668
+                first_name: Tash
+                last_name: Kiloh
+                dob: 1982-12-05
+                email: tash@sorbet.co.za
+                mobile: 0745892761
+                region: Gauteng
+                created_at: ''
+                updated_at: ''
+              - id: 3
+                first_name: Bafo
+                last_name: ''
+                dob: 0000-00-00
+                email: bafo@test.com
+                mobile: 0784066539
+                region: Eastern Cape
+                created_at: ''
+                updated_at: ''
+              - id: 4
+                first_name: 3rd floor\
+                last_name: Unit 2C
+                dob: 0000-00-00
+                email: lindsay.cragg@adidas.com
+                mobile: 0605799070
+                region: ''
+                created_at: ''
+                updated_at: ''
+              - id: 5
+                first_name: ''
+                last_name: ''
+                dob: ''
+                email: bradley.stern@adidas.com
+                mobile: ''
+                region: ''
+                created_at: ''
+                updated_at: ''
+              meta:
+                pagination:
+                  total: 17169
+                  count: 5
+                  per_page: 5
+                  current_page: 1
+                  total_pages: 3434
+                  links:
+                    next: https://api.stage.reebokdelta.co.za/v1/users?page=2
+          headers:
+            Access-Control-Allow-Credentials:
+              type: string
+              default: 'true'
+            Access-Control-Allow-Headers:
+              type: string
+              default: Content-Type, Authorization, X-Requested-With
+            Access-Control-Allow-Methods:
+              type: string
+              default: POST, GET, OPTIONS, PUT, DELETE
+            Access-Control-Allow-Origin:
+              type: string
+              default: '*'
+            Access-Control-Max-Age:
+              type: string
+              default: '86400'
+            Cache-Control:
+              type: string
+              default: no-cache, private
+            Connection:
+              type: string
+              default: Keep-Alive
+            Date:
+              type: string
+              default: Mon, 16 Apr 2018 11:56:09 GMT
+            Keep-Alive:
+              type: string
+              default: timeout=5, max=100
+            Server:
+              type: string
+              default: Apache
+            Transfer-Encoding:
+              type: string
+              default: chunked
+            Vary:
+              type: string
+              default: Authorization
+            X-Powered-By:
+              type: string
+              default: PHP/7.0.29-1~dotdeb+8.1
+    post:
+      description: Create a user.
+      summary: Create User
+      tags:
+      - User
+      operationId: CreateUser
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/CreateUserRequest'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /v1/users/481562:
+    get:
+      description: Get user
+      summary: Get User by ID
+      tags:
+      - User
+      operationId: GetUserbyID
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /v1/transactions:
+    get:
+      summary: List Transactions
+      tags:
+      - Transactions
+      operationId: ListTransactions
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      responses:
+        '200':
+          description: ''
+          headers: {}
+    post:
+      description: Create instore transaction
+      summary: Create ecom Transaction
+      tags:
+      - Transactions
+      operationId: CreateecomTransaction
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/CreateecomTransactionRequest'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /v1/transactions/1000/sale-entries:
+    get:
+      description: Get transaction items for a transaction
+      summary: List sales entries for transaction
+      tags:
+      - Transactions
+      operationId: Listsalesentriesfortransaction
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      responses:
+        '200':
+          description: ''
+          headers: {}
+    post:
+      description: Create transaction sale entry
+      summary: Create sales entry for transaction
+      tags:
+      - Transactions
+      operationId: Createsalesentryfortransaction
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/CreatesalesentryfortransactionRequest'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /v1/transactions/1000/sale-entries/1:
+    put:
+      description: Update transaction sale entry
+      summary: Update sales entry
+      tags:
+      - Transactions
+      operationId: Updatesalesentry
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/UpdatesalesentryRequest'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /v1/members:
+    post:
+      description: Create trans member
+      summary: Create member
+      tags:
+      - Member
+      operationId: Createmember
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/CreatememberRequest'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+    get:
+      description: Get trans members
+      summary: List global members
+      tags:
+      - Member
+      operationId: Listglobalmembers
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /v1/items:
+    get:
+      description: Get Items (trans_itemdesc)
+      summary: List items
+      tags:
+      - Item
+      operationId: Listitems
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      responses:
+        '200':
+          description: ''
+          headers: {}
+    post:
+      description: Create trans item desc
+      summary: Create items
+      tags:
+      - Item
+      operationId: Createitems
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/CreateitemsRequest'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /v1/interests:
+    get:
+      description: List interests
+      summary: List interests
+      tags:
+      - Interests
+      operationId: Listinterests
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      responses:
+        '200':
+          description: ''
+          headers: {}
+definitions:
+  AuthLoginRequest:
+    title: AuthLoginRequest
+    example:
+      username: zando
+      password: zand123@o
+    type: object
+    properties:
+      username:
+        type: string
+      password:
+        type: string
+    required:
+    - username
+    - password
+  Finduserbyemail:
+    title: Finduserbyemail
+    example:
+      status: 200
+      data:
+      - id: 1
+        first_name: 3rd floor\
+        last_name: Unit 2C
+        dob: 0000-00-00
+        email: rushni.nordien@adidas.com
+        mobile: 0724440004
+        region: Western Cape
+        created_at: ''
+        updated_at: ''
+      - id: 668
+        first_name: Tash
+        last_name: Kiloh
+        dob: 1982-12-05
+        email: tash@sorbet.co.za
+        mobile: 0745892761
+        region: Gauteng
+        created_at: ''
+        updated_at: ''
+      - id: 3
+        first_name: Bafo
+        last_name: ''
+        dob: 0000-00-00
+        email: bafo@test.com
+        mobile: 0784066539
+        region: Eastern Cape
+        created_at: ''
+        updated_at: ''
+      - id: 4
+        first_name: 3rd floor\
+        last_name: Unit 2C
+        dob: 0000-00-00
+        email: lindsay.cragg@adidas.com
+        mobile: 0605799070
+        region: ''
+        created_at: ''
+        updated_at: ''
+      - id: 5
+        first_name: ''
+        last_name: ''
+        dob: ''
+        email: bradley.stern@adidas.com
+        mobile: ''
+        region: ''
+        created_at: ''
+        updated_at: ''
+      meta:
+        pagination:
+          total: 17169
+          count: 5
+          per_page: 5
+          current_page: 1
+          total_pages: 3434
+          links:
+            next: https://api.stage.reebokdelta.co.za/v1/users?page=2
+    type: object
+    properties:
+      status:
+        type: integer
+        format: int32
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Datum'
+      meta:
+        $ref: '#/definitions/Meta'
+    required:
+    - status
+    - data
+    - meta
+  Datum:
+    title: Datum
+    example:
+      id: 1
+      first_name: 3rd floor\
+      last_name: Unit 2C
+      dob: 0000-00-00
+      email: rushni.nordien@adidas.com
+      mobile: 0724440004
+      region: Western Cape
+      created_at: ''
+      updated_at: ''
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      first_name:
+        type: string
+      last_name:
+        type: string
+      dob:
+        type: string
+      email:
+        type: string
+      mobile:
+        type: string
+      region:
+        type: string
+      created_at:
+        type: string
+      updated_at:
+        type: string
+    required:
+    - id
+    - first_name
+    - last_name
+    - dob
+    - email
+    - mobile
+    - region
+    - created_at
+    - updated_at
+  Meta:
+    title: Meta
+    example:
+      pagination:
+        total: 17169
+        count: 5
+        per_page: 5
+        current_page: 1
+        total_pages: 3434
+        links:
+          next: https://api.stage.reebokdelta.co.za/v1/users?page=2
+    type: object
+    properties:
+      pagination:
+        $ref: '#/definitions/Pagination'
+    required:
+    - pagination
+  Pagination:
+    title: Pagination
+    example:
+      total: 17169
+      count: 5
+      per_page: 5
+      current_page: 1
+      total_pages: 3434
+      links:
+        next: https://api.stage.reebokdelta.co.za/v1/users?page=2
+    type: object
+    properties:
+      total:
+        type: integer
+        format: int32
+      count:
+        type: integer
+        format: int32
+      per_page:
+        type: integer
+        format: int32
+      current_page:
+        type: integer
+        format: int32
+      total_pages:
+        type: integer
+        format: int32
+      links:
+        $ref: '#/definitions/Links'
+    required:
+    - total
+    - count
+    - per_page
+    - current_page
+    - total_pages
+    - links
+  Links:
+    title: Links
+    example:
+      next: https://api.stage.reebokdelta.co.za/v1/users?page=2
+    type: object
+    properties:
+      next:
+        type: string
+    required:
+    - next
+  Includetransactionsandinterestsonuserlist:
+    title: Includetransactionsandinterestsonuserlist
+    type: object
+    properties:
+      status:
+        type: integer
+        format: int32
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Datum1'
+      meta:
+        $ref: '#/definitions/Meta'
+    required:
+    - status
+    - data
+    - meta
+  Datum1:
+    title: Datum1
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      first_name:
+        type: string
+      last_name:
+        type: string
+      dob:
+        type: string
+      email:
+        type: string
+      mobile:
+        type: string
+      region:
+        type: string
+      created_at:
+        type: string
+      updated_at:
+        type: string
+      transactions:
+        $ref: '#/definitions/Transactions'
+      interests:
+        $ref: '#/definitions/Interests'
+    required:
+    - id
+    - first_name
+    - last_name
+    - dob
+    - email
+    - mobile
+    - region
+    - created_at
+    - updated_at
+    - transactions
+    - interests
+  Transactions:
+    title: Transactions
+    example:
+      data: []
+    type: object
+    properties:
+      data:
+        type: array
+        items:
+          type: string
+    required:
+    - data
+  Interests:
+    title: Interests
+    type: object
+    properties:
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Datum2'
+    required:
+    - data
+  Datum2:
+    title: Datum2
+    type: object
+    properties:
+      userid:
+        type: integer
+        format: int32
+      created_at:
+        type: string
+      interest:
+        $ref: '#/definitions/Interest'
+  Interest:
+    title: Interest
+    type: object
+    properties:
+      data:
+        $ref: '#/definitions/Data'
+    required:
+    - data
+  Data:
+    title: Data
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      title:
+        type: string
+      user_spelling:
+        type: string
+      BU:
+        type: string
+      type:
+        type: string
+      grouping:
+        type: string
+      position:
+        type: string
+      enabled:
+        type: integer
+        format: int32
+      removed:
+        type: integer
+        format: int32
+      sportsgroup_id:
+        type: integer
+        format: int32
+      created_at:
+        type: string
+      updated_at:
+        type: string
+  Data1:
+    title: Data1
+    example:
+      id: 9
+      title: Combat Sports
+      user_spelling: ''
+      BU: non
+      type: aut
+      grouping: all
+      position: aperiam
+      enabled: 1
+      removed: 0
+      sportsgroup_id: 0
+      created_at: 2018-03-09 10:49:44
+      updated_at: 2018-03-09 10:49:44
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      title:
+        type: string
+      user_spelling:
+        type: string
+      BU:
+        type: string
+      type:
+        type: string
+      grouping:
+        type: string
+      position:
+        type: string
+      enabled:
+        type: integer
+        format: int32
+      removed:
+        type: integer
+        format: int32
+      sportsgroup_id:
+        type: integer
+        format: int32
+      created_at:
+        type: string
+      updated_at:
+        type: string
+    required:
+    - id
+    - title
+    - user_spelling
+    - BU
+    - type
+    - grouping
+    - position
+    - enabled
+    - removed
+    - sportsgroup_id
+    - created_at
+    - updated_at
+  CreateUserRequest:
+    title: CreateUserRequest
+    example:
+      first_name: Jane
+      last_name: Doe
+      dob: 2000-01-01
+      email: jane.doe@example.com
+      mobile: '27211234567'
+      platform: ecomm
+      interests:
+      - '1'
+      - '3'
+    type: object
+    properties:
+      first_name:
+        type: string
+      last_name:
+        type: string
+      dob:
+        type: string
+      email:
+        type: string
+      mobile:
+        type: string
+      platform:
+        type: string
+      interests:
+        type: array
+        items:
+          type: string
+    required:
+    - first_name
+    - last_name
+    - dob
+    - email
+    - mobile
+    - platform
+    - interests
+  CreateecomTransactionRequest:
+    title: CreateecomTransactionRequest
+    example:
+      transno: 1003
+      transdate: 2018-02-08
+      trans_amount: 589.23
+      no_items: 5
+      userid: 481562
+      type: FO
+      identifier: 002
+      rbo_memberno: '1111111111'
+      ext_memberno: '222222222'
+      storeno: za123
+      delivery_address: 12 Seuss way
+      pos_termno: '555'
+      cardno: '6000555553447777'
+    type: object
+    properties:
+      transno:
+        type: integer
+        format: int32
+      transdate:
+        type: string
+      trans_amount:
+        type: number
+        format: double
+      no_items:
+        type: integer
+        format: int32
+      userid:
+        type: integer
+        format: int32
+      type:
+        type: string
+      identifier:
+        type: string
+      rbo_memberno:
+        type: string
+      ext_memberno:
+        type: string
+      storeno:
+        type: string
+      delivery_address:
+        type: string
+      pos_termno:
+        type: string
+      cardno:
+        type: string
+    required:
+    - transno
+    - transdate
+    - trans_amount
+    - no_items
+    - userid
+    - type
+    - identifier
+    - rbo_memberno
+    - ext_memberno
+    - storeno
+    - delivery_address
+    - pos_termno
+    - cardno
+  CreateglobaltransactionRequest:
+    title: CreateglobaltransactionRequest
+    example:
+      transno: 3030
+      transdate: 2018-02-08
+      trans_amount: 758.34
+      no_items: 1
+      userid: 481562
+      type: ecomm
+      storeno: za123
+      cardno: '6000555553447777'
+      id_customer: '999'
+      email: example@example.com
+    type: object
+    properties:
+      transno:
+        type: integer
+        format: int32
+      transdate:
+        type: string
+      trans_amount:
+        type: number
+        format: double
+      no_items:
+        type: integer
+        format: int32
+      userid:
+        type: integer
+        format: int32
+      type:
+        type: string
+      storeno:
+        type: string
+      cardno:
+        type: string
+      id_customer:
+        type: string
+      email:
+        type: string
+    required:
+    - transno
+    - transdate
+    - trans_amount
+    - no_items
+    - userid
+    - type
+    - storeno
+    - cardno
+    - id_customer
+    - email
+  CreatesalesentryfortransactionRequest:
+    title: CreatesalesentryfortransactionRequest
+    example:
+      itemno: 1
+      transdate: 2018-02-08
+      item_amount: 100.23
+      quantity: 2
+      type: FO
+    type: object
+    properties:
+      itemno:
+        type: integer
+        format: int32
+      transdate:
+        type: string
+      item_amount:
+        type: number
+        format: double
+      quantity:
+        type: integer
+        format: int32
+      type:
+        type: string
+    required:
+    - itemno
+    - transdate
+    - item_amount
+    - quantity
+    - type
+  UpdatesalesentryRequest:
+    title: UpdatesalesentryRequest
+    example:
+      storeno: za123
+      identifier: 002
+      colourway: blue/red
+    type: object
+    properties:
+      storeno:
+        type: string
+      identifier:
+        type: string
+      colourway:
+        type: string
+    required:
+    - storeno
+    - identifier
+    - colourway
+  CreatememberRequest:
+    title: CreatememberRequest
+    example:
+      rbo_memberno: '1111123334454555'
+      ext_memberno: '8886667775556767'
+    type: object
+    properties:
+      rbo_memberno:
+        type: string
+      ext_memberno:
+        type: string
+    required:
+    - rbo_memberno
+    - ext_memberno
+  CreateitemsRequest:
+    title: CreateitemsRequest
+    example:
+      article_nr: 010001
+      description: Supernova Light 6 W
+      colourway: RUNWHT/SIRRE
+      division: FOOTWEAR
+      gender: WOMENS
+      sport_category: RUNNING
+      product_group: SHOES
+      product_type: SHOES - LOW (NON FOOTBALL)
+      first_season: F07
+      last_season: F07
+      season: CURRENT-2+
+      business_segment: RUNNING FTW ADIDAS
+      sales_line: SUPERNOVA
+      marketing_line: LIGHT
+    type: object
+    properties:
+      article_nr:
+        type: string
+      description:
+        type: string
+      colourway:
+        type: string
+      division:
+        type: string
+      gender:
+        type: string
+      sport_category:
+        type: string
+      product_group:
+        type: string
+      product_type:
+        type: string
+      first_season:
+        type: string
+      last_season:
+        type: string
+      season:
+        type: string
+      business_segment:
+        type: string
+      sales_line:
+        type: string
+      marketing_line:
+        type: string
+    required:
+    - article_nr
+    - description
+    - colourway
+    - division
+    - gender
+    - sport_category
+    - product_group
+    - product_type
+    - first_season
+    - last_season
+    - season
+    - business_segment
+    - sales_line
+    - marketing_line
+tags:
+- name: Authentication
+- name: User
+- name: Transactions
+- name: Member
+- name: Item
+- name: Interests
