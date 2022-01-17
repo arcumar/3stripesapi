@@ -58,11 +58,6 @@ paths:
       produces:
       - application/json
       parameters:
-      - name: Authorization
-        in: header
-        required: false
-        default: Bearer {token}
-        type: string
       - name: filters[email]
         in: query
         required: true
@@ -176,6 +171,8 @@ paths:
             X-Powered-By:
               type: string
               default: PHP/7.0.29-1~dotdeb+8.1
+      security:
+      - bearer: []
     post:
       description: Create a user.
       summary: Create User
@@ -188,11 +185,6 @@ paths:
       consumes:
       - application/json
       parameters:
-      - name: Authorization
-        in: header
-        required: false
-        default: Bearer {token}
-        type: string
       - name: Content-Type
         in: header
         required: false
@@ -210,6 +202,8 @@ paths:
         '200':
           description: ''
           headers: {}
+      security:
+      - bearer: []
   /v1/users/481562:
     get:
       description: Get user
@@ -220,16 +214,13 @@ paths:
       deprecated: false
       produces:
       - application/json
-      parameters:
-      - name: Authorization
-        in: header
-        required: false
-        default: Bearer {token}
-        type: string
+      parameters: []
       responses:
         '200':
           description: ''
           headers: {}
+      security:
+      - bearer: []
   /v1/transactions:
     get:
       summary: List Transactions
@@ -239,16 +230,13 @@ paths:
       deprecated: false
       produces:
       - application/json
-      parameters:
-      - name: Authorization
-        in: header
-        required: false
-        default: Bearer {token}
-        type: string
+      parameters: []
       responses:
         '200':
           description: ''
           headers: {}
+      security:
+      - bearer: []
     post:
       description: Create instore transaction
       summary: Create ecom Transaction
@@ -261,11 +249,6 @@ paths:
       consumes:
       - application/json
       parameters:
-      - name: Authorization
-        in: header
-        required: false
-        default: Bearer {token}
-        type: string
       - name: Content-Type
         in: header
         required: false
@@ -283,6 +266,8 @@ paths:
         '200':
           description: ''
           headers: {}
+      security:
+      - bearer: []
   /v1/transactions/1000/sale-entries:
     get:
       description: Get transaction items for a transaction
@@ -293,16 +278,13 @@ paths:
       deprecated: false
       produces:
       - application/json
-      parameters:
-      - name: Authorization
-        in: header
-        required: false
-        default: Bearer {token}
-        type: string
+      parameters: []
       responses:
         '200':
           description: ''
           headers: {}
+      security:
+      - bearer: []
     post:
       description: Create transaction sale entry
       summary: Create sales entry for transaction
@@ -315,11 +297,6 @@ paths:
       consumes:
       - application/json
       parameters:
-      - name: Authorization
-        in: header
-        required: false
-        default: Bearer {token}
-        type: string
       - name: Content-Type
         in: header
         required: false
@@ -337,6 +314,8 @@ paths:
         '200':
           description: ''
           headers: {}
+      security:
+      - bearer: []
   /v1/transactions/1000/sale-entries/1:
     put:
       description: Update transaction sale entry
@@ -350,11 +329,6 @@ paths:
       consumes:
       - application/json
       parameters:
-      - name: Authorization
-        in: header
-        required: false
-        default: Bearer {token}
-        type: string
       - name: Content-Type
         in: header
         required: false
@@ -372,6 +346,8 @@ paths:
         '200':
           description: ''
           headers: {}
+      security:
+      - bearer: []
   /v1/members:
     post:
       description: Create trans member
@@ -385,11 +361,6 @@ paths:
       consumes:
       - application/json
       parameters:
-      - name: Authorization
-        in: header
-        required: false
-        default: Bearer {token}
-        type: string
       - name: Content-Type
         in: header
         required: false
@@ -407,6 +378,8 @@ paths:
         '200':
           description: ''
           headers: {}
+      security:
+      - bearer: []
     get:
       description: Get trans members
       summary: List global members
@@ -416,16 +389,13 @@ paths:
       deprecated: false
       produces:
       - application/json
-      parameters:
-      - name: Authorization
-        in: header
-        required: false
-        default: Bearer {token}
-        type: string
+      parameters: []
       responses:
         '200':
           description: ''
           headers: {}
+      security:
+      - bearer: []
   /v1/items:
     get:
       description: Get Items (trans_itemdesc)
@@ -436,16 +406,13 @@ paths:
       deprecated: false
       produces:
       - application/json
-      parameters:
-      - name: Authorization
-        in: header
-        required: false
-        default: Bearer {token}
-        type: string
+      parameters: []
       responses:
         '200':
           description: ''
           headers: {}
+      security:
+      - bearer: []
     post:
       description: Create trans item desc
       summary: Create items
@@ -458,11 +425,6 @@ paths:
       consumes:
       - application/json
       parameters:
-      - name: Authorization
-        in: header
-        required: false
-        default: Bearer {token}
-        type: string
       - name: Content-Type
         in: header
         required: false
@@ -480,6 +442,8 @@ paths:
         '200':
           description: ''
           headers: {}
+      security:
+      - bearer: []
   /v1/interests:
     get:
       description: List interests
@@ -490,16 +454,13 @@ paths:
       deprecated: false
       produces:
       - application/json
-      parameters:
-      - name: Authorization
-        in: header
-        required: false
-        default: Bearer {token}
-        type: string
+      parameters: []
       responses:
         '200':
           description: ''
           headers: {}
+      security:
+      - bearer: []
 definitions:
   AuthLoginRequest:
     title: AuthLoginRequest
@@ -1155,6 +1116,7 @@ definitions:
     - business_segment
     - sales_line
     - marketing_line
+security: []
 tags:
 - name: Authentication
 - name: User
